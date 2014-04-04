@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Maas/!svn/ver/4294/components/transform/email-archiver/schemas
+END
+old_Order.Schema.json
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/Maas/!svn/ver/4294/components/transform/email-archiver/schemas/old_Order.Schema.json
+END
+Order.Schema.json
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Maas/!svn/ver/4294/components/transform/email-archiver/schemas/Order.Schema.json
+END
+Order.Class.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/Maas/!svn/ver/4294/components/transform/email-archiver/schemas/Order.Class.js
+END

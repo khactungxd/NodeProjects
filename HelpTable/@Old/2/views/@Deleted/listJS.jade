@@ -1,0 +1,39 @@
+extends layout
+block content
+	link(rel='stylesheet', href='/stylesheets/listJS.css', type='text/css')
+	h1= title	
+	div#container
+		div#hacker-list
+			table#data
+				thread
+					th Name
+					th Age
+					th City
+					th(colspan=2) &nbsp;
+				tbody.list
+		table(style='display:none')
+			tbody
+				tr#hacker-item
+					td.id(style='display:none')
+					td.name
+					td.age
+					td.city
+					td.edit
+						button.edit-item-btn Edit
+					td.remove
+						button.remove-item-btn Remove
+		table#edit
+			input#id-field(type='hidden')
+			tr
+				td.name				
+					input#name-field(type='text')
+				td.age	
+					input#age-field(type='text')
+				td.city	
+					input#city-field(type='text')
+				td.add
+					button#add-btn Add
+					button#edit-btn(style='display:none') Edit
+	script(type='text/javascript', src='/javascripts/listJS_EventHandler.js')
+	
+	

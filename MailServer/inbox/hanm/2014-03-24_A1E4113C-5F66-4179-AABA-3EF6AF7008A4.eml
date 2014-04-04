@@ -1,0 +1,50 @@
+Authentication-Results: palotest; 
+Received: from mail.oxseed.net ([192.168.16.247])
+	by palotest (Haraka/2.4.0) with ESMTP id A1E4113C-5F66-4179-AABA-3EF6AF7008A4.1
+	envelope-from <manhha1006@gmail.com>;
+	Mon, 24 Mar 2014 09:36:12 +0000
+Received: from localhost (mail.oxseed.net [127.0.0.1])
+	by mail.oxseed.net (Postfix) with ESMTP id AA584C1EC1
+	for <hanm@vn.oxseed.com>; Mon, 24 Mar 2014 10:36:48 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at testmail.oxseed.net
+Received: from mail.oxseed.net ([127.0.0.1])
+	by localhost (mail.oxseed.net [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id SiohI0YcJmpz for <hanm@vn.oxseed.com>;
+	Mon, 24 Mar 2014 10:36:42 +0100 (CET)
+Received: from mail-ob0-f174.google.com (mail-ob0-f174.google.com [209.85.214.174])
+	by mail.oxseed.net (Postfix) with ESMTPS id 1ECFDC1E8B
+	for <hanm@vn.oxseed.com>; Mon, 24 Mar 2014 10:36:40 +0100 (CET)
+Received: by mail-ob0-f174.google.com with SMTP id wo20so5435051obc.33
+        for <hanm@vn.oxseed.com>; Mon, 24 Mar 2014 02:36:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:date:message-id:subject:from:to:content-type;
+        bh=3yUEAc4DH/D+IOFrzn9otzcetBSU0P17bvWnyjSVtOM=;
+        b=jB+JA4+aeqY8gHrLEEAaMCDBUFaTu8n3qp/77Zl7jMZZCOBWF1XD+0htQTqDx0Iiy2
+         bU7peUmWbTYJ1nkDzltXgk0pQJAO8SWqaLq2jZWQOQHAEIDQqoKav3mPOQBKB3xPBCU0
+         O82/rTk2h+ZVLNQOtmxcHRg8i6dvly8NKR29SLEspTO2OkxjevAWXJTx6yNHG/6T8jKY
+         /XkH1nRYreFo1TE4qcVYM/WsIneu0jX7a3wiqeCZ1JNOD0uq6L/AxX+HIs/qz2jfn221
+         ansT54MyISd/uIplWEXGHQfVNkHfREjsVYHywYZOg4I/ZESJDFOVkk4Ykm5F2PXz2eov
+         DrtA==
+MIME-Version: 1.0
+X-Received: by 10.60.132.12 with SMTP id oq12mr5420623oeb.42.1395653762006;
+ Mon, 24 Mar 2014 02:36:02 -0700 (PDT)
+Received: by 10.182.250.107 with HTTP; Mon, 24 Mar 2014 02:36:01 -0700 (PDT)
+Date: Mon, 24 Mar 2014 16:36:01 +0700
+Message-ID: <CAAVd=P82Y0REAKJvZcJCafV936Nx7r_UWYsNy0Uv+m6TpM_MZQ@mail.gmail.com>
+Subject: test
+From: Ha Nguyen <manhha1006@gmail.com>
+To: hanm@vn.oxseed.com
+Content-Type: multipart/alternative; boundary=047d7b47286eb6c52f04f556f67e
+
+--047d7b47286eb6c52f04f556f67e
+Content-Type: text/plain; charset=ISO-8859-1
+
+test
+
+--047d7b47286eb6c52f04f556f67e
+Content-Type: text/html; charset=ISO-8859-1
+
+<div dir="ltr">test</div>
+
+--047d7b47286eb6c52f04f556f67e--

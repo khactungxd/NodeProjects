@@ -1,0 +1,24 @@
+doctype 5
+html(lang="en")
+  head
+    title = title
+  body
+    form(method="POST",action="/set_connect")
+      fieldset
+        label Driver
+        input(type="text", name="driver", value="DB2")
+        label Hostname
+        input(type="text", name="hostname", value="192.168.16.210")
+        label Port
+        input(type="text", name="port", value="3700")
+        label Database
+        input(type="text", name="database", value="SAMPLE")
+        label UID
+        input(type="text", name="uid", value="root")
+        label Password
+        input(type="password", name="password")
+        input(type="submit", value="Create Connect")
+
+
+
+

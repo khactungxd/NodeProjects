@@ -1,0 +1,383 @@
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+Express server listening on port 3006
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET / [32m200 [90m698ms - 1.01kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m18ms - 31.29kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m6ms - 1.96kb[0m
+[90mGET /javascripts/main_EventHandler.js [32m200 [90m29ms - 857b[0m
+[90mGET /javascripts/list.min.js [32m200 [90m29ms - 8.89kb[0m
+[90mGET /javascripts/tableList_EventHandler.js [32m200 [90m2ms - 3.76kb[0m
+[90mGET /images/ajax-loader.gif [32m200 [90m21ms - 2.55kb[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m326ms - 90.46kb[0m
+[90mGET /javascripts/jquery-ui.js [32m200 [90m636ms - 425.63kb[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m120ms - 71b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=sdfsdfsdf [32m200 [90m129ms - 1.52kb[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m4ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m2ms[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m2ms[0m
+[90mGET /javascripts/browse_EventHandler.js [32m200 [90m3ms - 7.24kb[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m9ms - 71b[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE `sdfsdfsdf` ;
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null },
+  wwww: { type: 'TEXT', allowNull: false, defaultValue: null },
+  wwwwww: { type: 'INT(11)', allowNull: false, defaultValue: null } }
+[90mGET /ajax?action=getTableStructure&tableName=sdfsdfsdf [32m200 [90m6ms - 266b[0m
+Executing: SELECT * FROM tb_flags WHERE xTableName='sdfsdfsdf' ;
+[ { xID: 21,
+    xTableName: 'sdfsdfsdf',
+    xFieldName: 'wwww',
+    xIsFilter: 0,
+    xIsVisual: 1,
+    xIsResult: 0,
+    xUpdateTime: Wed Jul 10 2013 14:45:02 GMT+0000 (UTC) },
+  { xID: 22,
+    xTableName: 'sdfsdfsdf',
+    xFieldName: 'wwwwww',
+    xIsFilter: 0,
+    xIsVisual: 0,
+    xIsResult: 0,
+    xUpdateTime: Wed Jul 10 2013 14:46:20 GMT+0000 (UTC) } ]
+[90mGET /ajax?tableName=sdfsdfsdf&action=getTableFlags [32m200 [90m91ms - 378b[0m
+Executing: SELECT * FROM `sdfsdfsdf`
+[90mGET /ajax?action=getAllRecords&tableName=sdfsdfsdf [32m200 [90m2ms - 65b[0m
+[90mGET /images/sort.gif [32m200 [90m2ms - 72b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=sdfsdfsdf&page=structure [32m200 [90m96ms - 1.28kb[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m5ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m5ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m3ms[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m2ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m2ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m2ms[0m
+[90mGET /javascripts/structure_EventHandler.js [32m200 [90m4ms - 5.55kb[0m
+Executing: SHOW TABLES
+Executing: DESCRIBE `sdfsdfsdf` ;
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null },
+  wwww: { type: 'TEXT', allowNull: false, defaultValue: null },
+  wwwwww: { type: 'INT(11)', allowNull: false, defaultValue: null } }
+[90mGET /ajax?tableName=sdfsdfsdf&action=getTableStructure [32m200 [90m7ms - 266b[0m
+[90mGET /ajax?action=getTableList [32m200 [90m10ms - 71b[0m
+Executing: SELECT * FROM tb_flags WHERE xTableName='sdfsdfsdf' ;
+[ { xID: 21,
+    xTableName: 'sdfsdfsdf',
+    xFieldName: 'wwww',
+    xIsFilter: 0,
+    xIsVisual: 1,
+    xIsResult: 0,
+    xUpdateTime: Wed Jul 10 2013 14:45:02 GMT+0000 (UTC) },
+  { xID: 22,
+    xTableName: 'sdfsdfsdf',
+    xFieldName: 'wwwwww',
+    xIsFilter: 0,
+    xIsVisual: 0,
+    xIsResult: 0,
+    xUpdateTime: Wed Jul 10 2013 14:46:20 GMT+0000 (UTC) } ]
+[90mGET /ajax?tableName=sdfsdfsdf&action=getTableFlags [32m200 [90m3ms - 378b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET / [32m200 [90m65ms - 1.01kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m3ms - 1.96kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m16ms - 31.29kb[0m
+[90mGET /javascripts/list.min.js [32m200 [90m19ms - 8.89kb[0m
+[90mGET /javascripts/main_EventHandler.js [32m200 [90m10ms - 857b[0m
+[90mGET /javascripts/tableList_EventHandler.js [32m200 [90m4ms - 3.76kb[0m
+[90mGET /images/ajax-loader.gif [32m200 [90m14ms - 2.55kb[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m4668ms - 90.46kb[0m
+[90mGET /javascripts/jquery-ui.js [32m200 [90m61562ms - 425.63kb[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m27ms - 71b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET / [32m200 [90m5748ms - 1.01kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m1796ms - 31.29kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m1786ms - 1.96kb[0m
+[90mGET /javascripts/list.min.js [32m200 [90m1427ms - 8.89kb[0m
+[90mGET /javascripts/main_EventHandler.js [32m200 [90m1420ms - 857b[0m
+[90mGET /javascripts/tableList_EventHandler.js [32m200 [90m2ms - 3.76kb[0m
+[90mGET /images/ajax-loader.gif [32m200 [90m149ms - 2.55kb[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m3276ms - 90.46kb[0m
+[90mGET /javascripts/jquery-ui.js [32m200 [90m5401ms - 425.63kb[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m23ms - 71b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=aa [32m200 [90m60ms - 1.49kb[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [32m200 [90m20ms - 7.24kb[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m7ms - 71b[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE `aa` ;
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null },
+  dsfsdfsdf: { type: 'TEXT', allowNull: false, defaultValue: null },
+  This: { type: 'TEXT', allowNull: false, defaultValue: null } }
+[90mGET /ajax?action=getTableStructure&tableName=aa [32m200 [90m5ms - 266b[0m
+Executing: SELECT * FROM tb_flags WHERE xTableName='aa' ;
+[ { xID: 18,
+    xTableName: 'aa',
+    xFieldName: 'dsfsdfsdf',
+    xIsFilter: 1,
+    xIsVisual: 0,
+    xIsResult: 0,
+    xUpdateTime: Wed Jul 10 2013 14:22:23 GMT+0000 (UTC) },
+  { xID: 19,
+    xTableName: 'aa',
+    xFieldName: 'sdfsdfsdf',
+    xIsFilter: 0,
+    xIsVisual: 1,
+    xIsResult: 0,
+    xUpdateTime: Tue Jul 09 2013 16:59:09 GMT+0000 (UTC) },
+  { xID: 20,
+    xTableName: 'aa',
+    xFieldName: 'This',
+    xIsFilter: 1,
+    xIsVisual: 1,
+    xIsResult: 1,
+    xUpdateTime: Wed Jul 10 2013 19:35:28 GMT+0000 (UTC) } ]
+[90mGET /ajax?tableName=aa&action=getTableFlags [32m200 [90m3ms - 552b[0m
+Executing: SELECT * FROM `aa`
+[90mGET /ajax?action=getAllRecords&tableName=aa [32m200 [90m3ms - 275b[0m
+[90mGET /images/sort.gif [32m200 [90m1ms - 72b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=sdfsdfsdf [32m200 [90m67ms - 1.52kb[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m0ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m0ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m2ms - 71b[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m2ms[0m
+Executing: DESCRIBE `sdfsdfsdf` ;
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null },
+  wwww: { type: 'TEXT', allowNull: false, defaultValue: null },
+  wwwwww: { type: 'INT(11)', allowNull: false, defaultValue: null } }
+[90mGET /ajax?action=getTableStructure&tableName=sdfsdfsdf [32m200 [90m4ms - 266b[0m
+Executing: SELECT * FROM tb_flags WHERE xTableName='sdfsdfsdf' ;
+[ { xID: 21,
+    xTableName: 'sdfsdfsdf',
+    xFieldName: 'wwww',
+    xIsFilter: 0,
+    xIsVisual: 1,
+    xIsResult: 0,
+    xUpdateTime: Wed Jul 10 2013 14:45:02 GMT+0000 (UTC) },
+  { xID: 22,
+    xTableName: 'sdfsdfsdf',
+    xFieldName: 'wwwwww',
+    xIsFilter: 0,
+    xIsVisual: 0,
+    xIsResult: 0,
+    xUpdateTime: Wed Jul 10 2013 14:46:20 GMT+0000 (UTC) } ]
+[90mGET /ajax?tableName=sdfsdfsdf&action=getTableFlags [32m200 [90m3ms - 378b[0m
+Executing: SELECT * FROM `sdfsdfsdf`
+[90mGET /ajax?action=getAllRecords&tableName=sdfsdfsdf [32m200 [90m2ms - 65b[0m
+[90mGET /images/sort.gif [32m200 [90m1ms - 72b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET / [32m200 [90m34ms - 1.01kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m8ms - 31.29kb[0m
+[90mGET /javascripts/main_EventHandler.js [32m200 [90m9ms - 857b[0m
+[90mGET /javascripts/list.min.js [32m200 [90m8ms - 8.89kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m6ms - 1.96kb[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m11ms - 90.46kb[0m
+[90mGET /javascripts/tableList_EventHandler.js [32m200 [90m7ms - 3.76kb[0m
+[90mGET /javascripts/jquery-ui.js [32m200 [90m19ms - 425.63kb[0m
+[90mGET /images/ajax-loader.gif [32m200 [90m4ms - 2.55kb[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m4ms - 71b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=sdfsdfsdf [32m200 [90m72ms - 1.52kb[0m
+[90mGET /javascripts/list.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m3ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /javascripts/browse_EventHandler.js [32m200 [90m6ms - 7.24kb[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m1ms[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m4ms - 71b[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE `sdfsdfsdf` ;
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null },
+  wwww: { type: 'TEXT', allowNull: false, defaultValue: null },
+  wwwwww: { type: 'INT(11)', allowNull: false, defaultValue: null } }
+[90mGET /ajax?action=getTableStructure&tableName=sdfsdfsdf [32m200 [90m4ms - 266b[0m
+Executing: SELECT * FROM tb_flags WHERE xTableName='sdfsdfsdf' ;
+[ { xID: 21,
+    xTableName: 'sdfsdfsdf',
+    xFieldName: 'wwww',
+    xIsFilter: 0,
+    xIsVisual: 1,
+    xIsResult: 0,
+    xUpdateTime: Wed Jul 10 2013 14:45:02 GMT+0000 (UTC) },
+  { xID: 22,
+    xTableName: 'sdfsdfsdf',
+    xFieldName: 'wwwwww',
+    xIsFilter: 0,
+    xIsVisual: 0,
+    xIsResult: 0,
+    xUpdateTime: Wed Jul 10 2013 14:46:20 GMT+0000 (UTC) } ]
+[90mGET /ajax?tableName=sdfsdfsdf&action=getTableFlags [32m200 [90m2ms - 378b[0m
+Executing: SELECT * FROM `sdfsdfsdf`
+[90mGET /ajax?action=getAllRecords&tableName=sdfsdfsdf [32m200 [90m3ms - 65b[0m
+[90mGET /images/sort.gif [32m200 [90m2ms - 72b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=tb_data [32m200 [90m47ms - 1.51kb[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m3ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m3ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m3ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m4ms - 71b[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE `tb_data` ;
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null },
+  name: { type: 'TEXT', allowNull: false, defaultValue: null },
+  age: { type: 'INT(11)', allowNull: false, defaultValue: null },
+  city: { type: 'TEXT', allowNull: false, defaultValue: null } }
+[90mGET /ajax?action=getTableStructure&tableName=tb_data [32m200 [90m5ms - 349b[0m
+Executing: SELECT * FROM tb_flags WHERE xTableName='tb_data' ;
+[ { xID: 15,
+    xTableName: 'tb_data',
+    xFieldName: 'age',
+    xIsFilter: 1,
+    xIsVisual: 1,
+    xIsResult: 0,
+    xUpdateTime: Sun Jul 07 2013 04:46:00 GMT+0000 (UTC) },
+  { xID: 16,
+    xTableName: 'tb_data',
+    xFieldName: 'city',
+    xIsFilter: 1,
+    xIsVisual: 1,
+    xIsResult: 1,
+    xUpdateTime: Wed Jul 10 2013 19:25:40 GMT+0000 (UTC) },
+  { xID: 17,
+    xTableName: 'tb_data',
+    xFieldName: 'name',
+    xIsFilter: 1,
+    xIsVisual: 1,
+    xIsResult: 1,
+    xUpdateTime: Wed Jul 10 2013 19:28:10 GMT+0000 (UTC) } ]
+[90mGET /ajax?tableName=tb_data&action=getTableFlags [32m200 [90m3ms - 556b[0m
+Executing: SELECT * FROM `tb_data`
+[90mGET /ajax?action=getAllRecords&tableName=tb_data [32m200 [90m5ms - 691b[0m
+[90mGET /images/sort.gif [36m304 [90m1ms[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=test [32m200 [90m45ms - 1.5kb[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m6ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m6ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m6ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m6ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m6ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m8ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m5ms - 71b[0m
+Executing: DESCRIBE `test` ;
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null } }
+[90mGET /ajax?action=getTableStructure&tableName=test [32m200 [90m3ms - 89b[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m7ms[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=test&page=structure [32m200 [90m82ms - 1.26kb[0m
+[90mGET /javascripts/list.min.js [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m3ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [32m200 [90m16ms - 5.55kb[0m
+Executing: SHOW TABLES
+Executing: DESCRIBE `test` ;
+[90mGET /ajax?action=getTableList [32m200 [90m11ms - 71b[0m
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null } }
+[90mGET /ajax?tableName=test&action=getTableStructure [32m200 [90m9ms - 89b[0m
+Executing: SELECT * FROM tb_flags WHERE xTableName='test' ;
+[]
+[90mGET /ajax?tableName=test&action=getTableFlags [32m200 [90m2ms - 2b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?page=tableList [32m200 [90m45ms - 1.01kb[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m4ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m4ms[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m3ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m4ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m3ms[0m
+[90mGET /javascripts/tableList_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m4ms - 71b[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m0ms[0m
+Executing: CREATE TABLE `test2` (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) ) ;
+[90mGET /ajax?action=addTable&tableName=test2 [32m200 [90m61ms - 7b[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m2ms - 82b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=test2&page=structure [32m200 [90m78ms - 1.26kb[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m3ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m3ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m2ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m3ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: SHOW TABLES
+Executing: DESCRIBE `test2` ;
+[90mGET /ajax?action=getTableList [32m200 [90m8ms - 82b[0m
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null } }
+[90mGET /ajax?tableName=test2&action=getTableStructure [32m200 [90m9ms - 89b[0m
+Executing: SELECT * FROM tb_flags WHERE xTableName='test2' ;
+[]
+[90mGET /ajax?tableName=test2&action=getTableFlags [32m200 [90m2ms - 2b[0m
+/NodeProjects/HelpTable/views/layout.jade, line 12:
+Implicit textOnly for `script` and `style` is deprecated.  Use `script.` or `style.` instead.
+[90mGET /?tbl=test2&page=structure [32m200 [90m37ms - 1.26kb[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+[90mGET /javascripts/main_EventHandler.js [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-ui.js [36m304 [90m2ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m3ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m2ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: SHOW TABLES
+[90mGET /ajax?action=getTableList [32m200 [90m3ms - 82b[0m
+Executing: DESCRIBE `test2` ;
+{ id: { type: 'INT(11)', allowNull: false, defaultValue: null } }
+[90mGET /ajax?tableName=test2&action=getTableStructure [32m200 [90m2ms - 89b[0m
+Executing: SELECT * FROM tb_flags WHERE xTableName='test2' ;
+[]
+[90mGET /ajax?tableName=test2&action=getTableFlags [32m200 [90m2ms - 2b[0m
+[90mGET /helpTable [36m303 [90m2ms[0m
+[90mGET /helpTable/ [33m404 [90m1ms[0m

@@ -1,0 +1,28 @@
+{"postalcodes": [
+  {
+    "adminCode3": "08111",
+    "adminName2": "Reg.-Bez. Stuttgart",
+    "adminName3": "Stuttgart",
+    "adminCode2": "081",
+    "postalcode": "70173",
+    "adminCode1": "BW",
+    "countryCode": "DE",
+    "lng": 9.18333,
+    "placeName": "Stuttgart",
+    "lat": 48.7667,
+    "adminName1": "Baden-Württemberg"
+  },
+  {
+    "adminCode3": "08111",
+    "adminName2": "Reg.-Bez. Stuttgart",
+    "adminName3": "Stuttgart",
+    "adminCode2": "081",
+    "postalcode": "70173",
+    "adminCode1": "BW",
+    "countryCode": "DE",
+    "lng": 9.17674285714286,
+    "placeName": "Stuttgart Stuttgart-Mitte",
+    "lat": 48.7786357142857,
+    "adminName1": "Baden-Württemberg"
+  }
+]}

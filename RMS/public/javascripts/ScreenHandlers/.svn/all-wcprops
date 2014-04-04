@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/ScreenHandlers
+END
+mainScreen.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/ScreenHandlers/mainScreen.js
+END
+orgunitScreen.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/ScreenHandlers/orgunitScreen.js
+END
+locationScreen.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/ScreenHandlers/locationScreen.js
+END
+activityScreen.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/ScreenHandlers/activityScreen.js
+END
+mapScreen.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/ScreenHandlers/mapScreen.js
+END
+chartScreen.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/ScreenHandlers/chartScreen.js
+END
+Screen.class.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/ScreenHandlers/Screen.class.js
+END

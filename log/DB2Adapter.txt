@@ -1,0 +1,18 @@
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+Express server listening on port 3100
+SyntaxError: Unexpected number
+    at Object.parse (native)
+    at /NodeProjects/node_modules/express/node_modules/connect/lib/middleware/json.js:85:25
+    at IncomingMessage.onEnd (/NodeProjects/node_modules/express/node_modules/connect/node_modules/raw-body/index.js:57:7)
+    at IncomingMessage.g (events.js:175:14)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)

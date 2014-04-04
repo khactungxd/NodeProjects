@@ -1,0 +1,97 @@
+#grey{position:fixed; top:0px; left:0px; width:100%; height:100%; z-index:10; background-color:black; opacity:0.7;display:none;}
+
+/* ========= MAIN SCREEN ============= */
+body {font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;margin:0 auto; padding:0px; width:100%; min-width:400px;}
+.header{position:fixed; top:0px;width:100%;}
+	.divScreenTitle{padding-bottom:5px;width:100%;border-bottom:1px solid #aaaaaa;background:#ccc;}
+	#btManageMandants{ width:20%; max-width:100px; min-width:70px;}
+		.btMandant{width:150px;}
+.body{margin:45px auto;}
+	#divLastUpdate{ font-size:20px; height:25px; padding:3px 8px;}
+	.divSM{background-color:transparent; min-height:100px;margin:2px 0px 6px 0px; padding:10px; border: 1px dotted #000;}	
+	.divMandant{background-color:#transparent; min-height:100px;margin:2px 0px 0px 0px; padding-left: 0px;border-top:1px solid #fff;}
+		.divSmTitle{font-weight:bold; font-size:25px;float:left}
+		.divMandantTitle{font-weight:bold; font-size:25px;float:left; padding-left:2%;}
+		
+		
+			.btSuperMandant{width:20%; max-width:100px; min-width:70px;}
+		.smData{font-size:18px;width:95%; }		
+			.spanTodayTitle, .spanThisMonthTitle, .spanThisYearTitle{float:left; width:30%;}
+			.spanTodayRequests, .spanThisMonthRequests, .spanThisYearRequests{float:left; width:30%; text-align:right}
+			.spanTodayResponse, .spanThisMonthResponse, .spanThisYearResponse{float:left; width:30%;text-align:right}
+			
+		.mandantData{font-size:18px;width:95%;}	
+			.spanTodayTitleMandant, .spanThisMonthTitleMandant, .spanThisYearTitleMandant{float:left; width:28%; padding-left:2%;}
+			
+	#btRemoveSm{width:150px; color:red; font-weight:bold; margin: 10px }
+	#btLocationView, #btActivityView, #btOrgunitView, #btMapView , #btChartView{width:150px; margin: 10px }		
+.footer{width: 100%; position:fixed; bottom:0px; border:solid;border-color: #aaaaaa #aaaaaa #aaaaaa #aaaaaa;border-width: 2px 0px 2px 0px; background:white;}
+	.btRefresh, .btSetInterval{margin-right:10px !important;}	
+		.btIntervalValue{display:block; width:100px;margin:10px auto;height:40px;}
+
+/* ========= LOCATION SCREEN ============= */
+#btViewActs{min-width:80px;}		
+
+#slDay, #slMonth, #slYear{width:100px;}
+.tbSetDate{margin: 5px auto; }
+.divLocationData{height:20px; padding: 10px 10px; border-bottom: 1px dotted black; }
+	.dataIndex{display:none}
+	.dataName{ float:left; margin-left:0px; font-weight:bold; }
+	.dataNOR{float:left;text-align:right; min-width:100px; width:15%}
+	.dataRT{float:left;text-align:right; min-width:100px; width:15%}
+	
+	.depth0{padding-left:0; width:45%;}
+	.depth1{padding-left:3%; width:42%;}
+	.depth2{padding-left:6%; width:39%;}
+	.depth3{padding-left:9%; width:36%;}
+	.depth4{padding-left:12%; width:33%;}
+	.depth5{padding-left:15%; width:30%;}
+	.depth6{padding-left:18%; width:27%;}
+.btListJsFilter, .btListJsRemoveFilter{width:120px}
+
+/* ========= ACTIVITY SCREEN ============= */
+.divActivityData{height:20px; padding: 10px 10px; border-bottom: 1px dotted black; }
+.btSetDate, .btSetLocation{margin-right:10px !important;}		
+
+/* ========= ORGUNIT SCREEN ============= */
+.divOrgunitData{height:20px; padding: 10px 10px; border-bottom: 1px dotted black; }
+	
+/* ========= MAP SCREEN ============= */
+.markerTitle{text-align:center; font-weight: bold; }
+.markerTable{width:90%; margin: 3px auto;}
+
+/* ========= CHART SCREEN ============= */
+
+/* ========= GENERAL ELEMENTS ============= */
+.navigationBarRight{position:absolute; top:0; right:0; float:right;text-align:right}
+.navigationBarLeft{position:absolute; top:0; left:0; float:left;text-align:left}
+.btBack{min-width:70px;text-align:center;}
+
+.divSmOnly:hover, .divMandant:hover, .divLocationData:hover, .divActivityData:hover, .divOrgunitData:hover {background: #ebffb6}
+.selected{background:#fde0a8}
+
+#listJsToolbar{padding:5px 10px; height: 35px; border-bottom: 1px dotted black; vertical-align: middle; }
+	#listJsSearchBox{float:left; padding-top: 5px; background:white;}
+	#listJsFilterArea{ float:right; }
+.dialog{display:none;}
+button, .button{height:35px;}
+.center{text-align:center}
+a {color: #00B7FF;}
+h1 {cursor:default;}
+.hide {display:none;}
+.show{display:block;}
+.loading{text-align:center;margin:100px; font-size:30px; font-weight:bold;}
+td{border:1px solid #aaa}
+
+/* ========= HELPER ============= */
+.border{
+	display: block;margin-left: auto;margin-right: auto;
+	padding:0px;border:solid;border-color: #dddddd #aaaaaa #aaaaaa #dddddd;border-width: 1px 2px 2px 1px;background-color:white;
+}
+.shadow {
+	margin:0px; text-align:center; font:normal 20pt Arial;color:#FFFFFF;
+	text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);
+}
+.red{color:red}
+.textRight{text-align:right}
+.textLeft{text-align:left;}

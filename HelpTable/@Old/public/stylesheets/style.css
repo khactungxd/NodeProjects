@@ -1,0 +1,42 @@
+/* ========= GENERAL ============ */
+body {padding: 20px;font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;}
+a {color: #00B7FF;}
+h1{text-align:center; color:orange}
+h2{text-align:left; font-weight:bold}
+.centered{text-align:center;}
+
+/* ========= MAIN LAYOUT ============ */
+#mainTitle{cursor:pointer;}
+#wrapper{width:980px; margin:0px auto;border:1px solid black;}
+#cLeft{width:130px;background:#eee;height:100%;padding:5px;}
+	#tableList{margin-left:15px;margin-top:10px;line-height:160%;}
+	#cLeft a{color:green !important; text-decoration:none; cursor:pointer;}
+#cRight{height:100%;padding:10px;}
+	#divTitle{color:green; width:780px; background:#eee;text-align:center; font-weight: bold;padding: 5px 0px; border-radius: 10px; margin:0px auto 20px auto; }
+	#menu{width:780px; margin:0px auto; margin-bottom:15px; text-align:center} /* MENU OF 4 PAGES */
+	#container{width:780px; margin: 10px auto;} /* for 3 pages, except Browse */
+
+/* ========= BROWSE PAGE ============ */
+#cloud-grey{position:fixed; top:0px; left:0px; width:100%; height:100%; z-index:10; background-color:black; opacity:0.7;display:none;}
+#cloud-white{position:fixed; width:780px; height:51px; top:50%; left:50%; margin-top:-80px; margin-left:-400px; z-index:12; background-color:white;display:none;text-align:center}
+#toolbar{width:780px; text-align:left; margin: 5px auto; }
+.sort:hover{cursor: pointer;}
+
+/* ========= STRUCTURE PAGE ============ */
+.bgGreen{background: #d0ffbd}
+
+/* ========= BROWSE & STRUCTURE ============ */
+table#data{margin:10px auto; width:780px; }
+table#data th, #tr-header th{min-width:60px}
+table#edit td{width:60px}
+table#edit input{width:60px; text-align:center; font-size:18px; background:#d0ffbd;}
+#data td, #data th, .tbDefault td, .tbDefault td{border:1px solid black; text-align:center;font-size:18px;}
+#data th, .tbDefault th{color:white; background:orange}
+
+/* ========= IMPORT PAGE ============ */
+
+/* ========= EXPORT PAGE ============ */
+
+
+
+

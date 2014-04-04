@@ -1,0 +1,865 @@
+Express server listening on port 3006
+[90mGET /helpTable [32m200 [90m163ms - 1.24kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m8ms - 31.29kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m3ms - 946[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /javascripts/list.min.js [32m200 [90m2ms - 8.89kb[0m
+[90mGET /javascripts/browse_EventHandler.js [32m200 [90m1ms - 4.75kb[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m2612ms - 90.46kb[0m
+[90mGET /images/ajax-loader.gif [32m200 [90m1ms - 2.55kb[0m
+Executing: DESCRIBE tb_data
+[90mGET /helpTable?page=structure [32m200 [90m18ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m3ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/structure_EventHandler.js [32m200 [90m2ms - 3.44kb[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /helpTable?page=structure [32m200 [90m8ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+
+events.js:72
+        throw er; // Unhandled 'error' event
+              ^
+Error: listen EADDRINUSE
+    at errnoException (net.js:884:11)
+    at Server._listen2 (net.js:1022:14)
+    at listen (net.js:1044:10)
+    at Server.listen (net.js:1110:5)
+    at Object.<anonymous> (/NodeProjects/HelpTable/app.js:39:24)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+Express server listening on port 3006
+Express server listening on port 3006
+[90mGET /helpTable?page=structure [32m200 [90m163ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m7ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m5ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m4ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m22ms - 349[0m
+[90mGET /helpTable?page=browse [32m200 [90m30ms - 1.24kb[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m8ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 245[0m
+Executing: INSERT INTO `helptable`.`tb_data` VALUES ('', 'xman','2','Hai Phong');
+Executing: UPDATE `tb_data` SET Name='Trang',Age='281',City='Hanoi' WHERE id=3
+[90mGET /ajax?action=editARecord&id=3&Name=Trang&Age=281&City=Hanoi [32m200 [90m102ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m2ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 246[0m
+Executing: UPDATE `tb_data` SET Name='Tu',Age='2',City='Hanoi' WHERE id=2
+[90mGET /ajax?action=editARecord&id=2&Name=Tu&Age=2&City=Hanoi [32m200 [90m6ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m2ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m3ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 245[0m
+Executing: INSERT INTO `helptable`.`tb_data` VALUES ('', '2','2','2');
+Executing: UPDATE `tb_data` SET Name='Tu',Age='2',City='aa' WHERE id=2
+[90mGET /ajax?action=editARecord&id=2&Name=Tu&Age=2&City=aa [32m200 [90m27ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 242[0m
+[90mGET /helpTable?page=structure [32m200 [90m11ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m2ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m8ms - 349[0m
+[90mGET /helpTable?page=browse [36m304 [90m13ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 242[0m
+[90mGET /helpTable?page=structure [32m200 [90m7ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m3ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+[90mGET /helpTable?page=browse [36m304 [90m12ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m3ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m4ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 242[0m
+Executing: INSERT INTO `helptable`.`tb_data` VALUES ('', '','','');
+Executing: INSERT INTO `helptable`.`tb_data` VALUES ('', '','','');
+[90mGET /helpTable?page=browse [36m304 [90m21ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m3ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m6ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 242[0m
+Express server listening on port 3006
+[90mGET /helpTable?page=browse [36m304 [90m163ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m4ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m22ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m10ms - 481[0m
+Executing: DELETE FROM `tb_data` WHERE id=12
+[90mGET /ajax?action=removeARecord&id=12 [32m200 [90m8ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 396[0m
+[90mGET /helpTable [32m200 [90m20ms - 1.25kb[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m2ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m6ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m4ms - 396[0m
+[90mGET /helpTable?page=structure [32m200 [90m9ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+[90mGET /helpTable?page=browse [36m304 [90m10ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m8ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m5ms - 396[0m
+[90mGET /helpTable [32m200 [90m11ms - 1.25kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m9ms - 31.29kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m2ms - 946[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /javascripts/list.min.js [32m200 [90m4ms - 8.89kb[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m180ms - 90.46kb[0m
+[90mGET /javascripts/browse_EventHandler.js [32m200 [90m2ms - 4.6kb[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m3ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /images/ajax-loader.gif [32m200 [90m2ms - 2.55kb[0m
+[90mGET /ajax?action=getTableStructure [32m200 [90m7ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 396[0m
+[90mGET /helpTable [32m200 [90m11ms - 1.25kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m2ms - 31.29kb[0m
+[90mGET /javascripts/list.min.js [32m200 [90m2ms - 8.89kb[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /stylesheets/style.css [32m200 [90m2ms - 946[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m176ms - 90.46kb[0m
+[90mGET /javascripts/browse_EventHandler.js [32m200 [90m1ms - 4.6kb[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /images/ajax-loader.gif [32m200 [90m3ms - 2.55kb[0m
+[90mGET /ajax?action=getTableStructure [32m200 [90m10ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m4ms - 396[0m
+[90mGET /helpTable [36m304 [90m22ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m9ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 396[0m
+[90mGET /helpTable [36m304 [90m7ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 396[0m
+[90mGET /helpTable?page=structure [32m200 [90m5ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/structure_EventHandler.js [32m200 [90m2ms - 3.44kb[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m4ms - 349[0m
+[90mGET /helpTable?page=import [32m200 [90m9ms - 1.27kb[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m2ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/import_EventHandler.js [32m200 [90m3ms - 95[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m2ms[0m
+[90mGET /helpTable?page=structure [32m200 [90m5ms - 912[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+[90mGET /helpTable?page=browse [32m200 [90m7ms - 1.25kb[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m3ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /images/ajax-loader.gif [36m304 [90m2ms[0m
+[90mGET /ajax?action=getTableStructure [32m200 [90m9ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m1ms - 396[0m
+[90mGET /helpTable?page=structure [32m200 [90m6ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m0ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+[90mGET /helpTable [32m200 [90m6ms - 1.25kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m3ms - 31.29kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m4ms - 946[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /javascripts/list.min.js [32m200 [90m2ms - 8.89kb[0m
+[90mGET /javascripts/browse_EventHandler.js [32m200 [90m2ms - 4.6kb[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m2376ms - 90.46kb[0m
+[90mGET /images/ajax-loader.gif [32m200 [90m1ms - 2.55kb[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m4ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m4ms - 396[0m
+[90mGET /helpTable?page=structure [32m200 [90m10ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [32m200 [90m1ms - 3.44kb[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m3ms - 349[0m
+[90mGET /helpTable?page=import [32m200 [90m5ms - 1.27kb[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /javascripts/import_EventHandler.js [32m200 [90m1ms - 95[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /helpTable?page=export [32m200 [90m8ms - 950[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m5ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/export_EventHandler.js [32m200 [90m2ms - 95[0m
+Executing: DESCRIBE tb_data
+Executing: SELECT * FROM tb_data
+The file was saved!
+[90mGET /downloadCSV [36m302 [90m10ms - 96[0m
+[90mGET /files/helpTable.csv [32m200 [90m1ms - 73[0m
+[90mGET /helpTable?page=browse [32m200 [90m8ms - 1.25kb[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m0ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m6ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 396[0m
+[90mGET /helpTable?page=browse [36m304 [90m7ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m8ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 396[0m
+Executing: UPDATE `tb_data` SET Name='test',Age='25',City='Hanoi' WHERE id=1
+[90mGET /ajax?action=editARecord&id=1&Name=test&Age=25&City=Hanoi [32m200 [90m5ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m3ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 395[0m
+Executing: INSERT INTO `tb_data` VALUES ('', 'vjhlk','hh','rrrr');
+[90mGET /ajax?action=addARecord&Name=vjhlk&Age=hh&City=rrrr [32m200 [90m4ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m4ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m4ms - 476[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m4ms - 476[0m
+[90mGET /helpTable?page=browse [36m304 [90m5ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m9ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 476[0m
+Executing: INSERT INTO `tb_data` VALUES ('', '','','');
+[90mGET /ajax?action=addARecord&Name=&Age=&City= [32m200 [90m7ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m4ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 548[0m
+Executing: DELETE FROM `tb_data` WHERE id=1
+[90mGET /ajax?action=removeARecord&id=1 [32m200 [90m8ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m3ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m2ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 467[0m
+Executing: DELETE FROM `tb_data` WHERE id=2
+[90mGET /ajax?action=removeARecord&id=2 [32m200 [90m2ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m3ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 391[0m
+[90mGET /helpTable?page=export [32m200 [90m12ms - 950[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/export_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /helpTable?page=import [36m304 [90m4ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m3ms[0m
+[90mGET /javascripts/import_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m2ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /helpTable?page=browse [36m304 [90m4ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m0ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 391[0m
+[90mGET /helpTable?page=export [32m200 [90m5ms - 950[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/export_EventHandler.js [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+Executing: SELECT * FROM tb_data
+The file was saved!
+[90mGET /downloadCSV [36m302 [90m10ms - 96[0m
+[90mGET /files/helpTable.csv [32m200 [90m2ms - 66[0m
+[90mGET /helpTable?page=browse [36m304 [90m6ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m0ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 391[0m
+Executing: UPDATE `tb_data` SET Name='Trang',Age='281',City='Hanoi, test' WHERE id=3
+[90mGET /ajax?action=editARecord&id=3&Name=Trang&Age=281&City=Hanoi,%20test [32m200 [90m6ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m2ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 397[0m
+Executing: UPDATE `tb_data` SET Name='1',Age='2',City='a<script>alert("TEST")</script>' WHERE id=4
+[90mGET /ajax?action=editARecord&id=4&Name=1&Age=2&City=a%3Cscript%3Ealert(%22TEST%22)%3C/script%3E [32m200 [90m6ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m3ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 429[0m
+Executing: UPDATE `tb_data` SET Name='1',Age='2',City='a alert("TEST")' WHERE id=4
+[90mGET /ajax?action=editARecord&id=4&Name=1&Age=2&City=a%20alert(%22TEST%22) [32m200 [90m5ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m2ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 413[0m
+Executing: UPDATE `tb_data` SET Name='1',Age='2',City='a ',lt;script='',gt;alert("TEST")='',lt;/script='',gt;='' WHERE id=4
+Executing: UPDATE `tb_data` SET Name='1',Age='2',City='a alert("TEST") ',gt;='' WHERE id=4
+Executing: UPDATE `tb_data` SET Name='1',Age='2',City='a ',lt;script='',gt;alert("TEST")='',lt;/script='',gt;='' WHERE id=4
+Executing: UPDATE `tb_data` SET Name='1 ',='',Age='2',City='a alert("TEST")' WHERE id=4
+Executing: UPDATE `tb_data` SET Name='1',Age='2',City='a alert("TEST"); ,' WHERE id=4
+[90mGET /ajax?action=editARecord&id=4&Name=1&Age=2&City=a%20alert(%22TEST%22);%20, [32m200 [90m7ms - 7[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m2ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 416[0m
+[90mGET /helpTable?page=export [32m200 [90m4ms - 950[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/export_EventHandler.js [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+Executing: SELECT * FROM tb_data
+The file was saved!
+[90mGET /downloadCSV [36m302 [90m6ms - 96[0m
+[90mGET /files/helpTable.csv [32m200 [90m1ms - 89[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m4ms - 416[0m
+[90mGET /helpTable?page=structure [32m200 [90m13ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m3ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m4ms - 349[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m2ms[0m
+Executing: ALTER TABLE `tb_data` CHANGE `Age` `Age` INT(11) NOT NULL
+[90mGET /ajax?action=editAField&oldFieldName=Age&fieldName=Age&fieldType=INT(11) [32m200 [90m52ms - 7[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m2ms - 349[0m
+[90mGET /helpTable?page=browse [36m304 [90m9ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m0ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m4ms - 416[0m
+[90mGET /helpTable?page=structure [32m200 [90m5ms - 912[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m7ms - 349[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: ALTER TABLE `tb_data` CHANGE `Name` `Name` TEXT NOT NULL
+[90mGET /ajax?action=editAField&oldFieldName=Name&fieldName=Name&fieldType=TEXT [32m200 [90m7ms - 7[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m3ms - 349[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: ALTER TABLE `tb_data` CHANGE `Name` `Name` TEXT NOT NULL
+[90mGET /ajax?action=editAField&oldFieldName=Name&fieldName=Name&fieldType=TEXT [32m200 [90m6ms - 7[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m3ms - 349[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: ALTER TABLE `tb_data` CHANGE `Name` `Name` TEXT NOT NULL
+[90mGET /ajax?action=editAField&oldFieldName=Name&fieldName=Name&fieldType=TEXT [32m200 [90m4ms - 7[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+[90mGET /helpTable?page=import [36m304 [90m8ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/import_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m0ms[0m
+[90mGET /helpTable?page=structure [32m200 [90m6ms - 912[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/structure_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+[90mGET /helpTable?page=browse [36m304 [90m9ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m3ms - 416[0m
+[90mGET /helpTable [36m304 [90m10ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m2ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m6ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 416[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m1ms[0m
+[90mHEAD /helpTable [32m200 [90m28ms - 1.25kb[0m
+[90mGET /helpTable [36m304 [90m5ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /images/ajax-loader.gif [36m304 [90m3ms[0m
+[90mGET /ajax?action=getTableStructure [32m200 [90m5ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 416[0m
+[90mGET /helpTable [32m200 [90m6ms - 1.25kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m2ms - 31.29kb[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /stylesheets/style.css [32m200 [90m1ms - 946[0m
+[90mGET /javascripts/list.min.js [32m200 [90m1ms - 8.89kb[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m157ms - 90.46kb[0m
+[90mGET /javascripts/browse_EventHandler.js [32m200 [90m1ms - 4.6kb[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /images/ajax-loader.gif [32m200 [90m2ms - 2.55kb[0m
+[90mGET /ajax?action=getTableStructure [32m200 [90m7ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 416[0m
+[90mGET /h2wdms/helptable [33m404 [90m1ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m0ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m1ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m0ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m0ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m0ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m0ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m1ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m1ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m0ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m1ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m1ms[0m
+[90mGET /h2wdms/helptable [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m0ms[0m
+[90mGET /H2WDMS [33m404 [90m0ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m0ms[0m
+[90mGET /H2WDMS [33m404 [90m0ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m0ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m0ms[0m
+[90mGET /H2WDMS [33m404 [90m1ms[0m
+[90mGET /H2WDMS [33m404 [90m0ms[0m
+[90mGET /h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms/h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /h2wdms [33m404 [90m0ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m0ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m2ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m0ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m1ms[0m
+[90mGET /h2wdms/index.html [33m404 [90m0ms[0m
+[90mGET /h2wdms [33m404 [90m1ms[0m
+[90mGET /helptable [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helptable?page=structure [32m200 [90m4ms - 912[0m
+[90mGET /helptable?page=browse [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helpTable [32m200 [90m5ms - 1.25kb[0m
+[90mGET /stylesheets/jquery-ui.css [32m200 [90m1ms - 31.29kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m1ms - 946[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/list.min.js [32m200 [90m2ms - 8.89kb[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [32m200 [90m308ms - 90.46kb[0m
+[90mGET /javascripts/browse_EventHandler.js [32m200 [90m1ms - 4.6kb[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /images/ajax-loader.gif [32m200 [90m3ms - 2.55kb[0m
+[90mGET /ajax?action=getTableStructure [32m200 [90m4ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 416[0m
+[90mGET /helptable?page=browse [36m304 [90m6ms[0m
+[90mGET /helptable?page=browse [36m304 [90m6ms[0m
+[90mGET /helptable?page=browse [36m304 [90m6ms[0m
+[90mGET /helptable [36m304 [90m6ms[0m
+[90mGET /helptable?page=import [32m200 [90m6ms - 1.27kb[0m
+[90mGET /helptable?page=browse [36m304 [90m6ms[0m
+[90mGET /helptable?page=structure [32m200 [90m6ms - 912[0m
+[90mGET /helptable?page=browse [36m304 [90m6ms[0m
+[90mGET /helptable?page=structure [32m200 [90m5ms - 912[0m
+[90mGET /helpTable [36m304 [90m5ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m0ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m4ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+[90mGET /ajax?action=getTableStructure [32m200 [90m7ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m2ms - 416[0m
+[90mGET /helpTable [36m304 [90m12ms[0m
+[90mGET /stylesheets/jquery-ui.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/list.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/browse_EventHandler.js [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-ui.js [33m404 [90m0ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m1ms[0m
+Executing: DESCRIBE tb_data
+[90mGET /ajax?action=getTableStructure [32m200 [90m4ms - 349[0m
+Executing: SELECT * FROM tb_data
+[90mGET /ajax?action=getAllRecords [32m200 [90m1ms - 416[0m
+[90mGET /images/ajax-loader.gif [36m304 [90m0ms[0m
+[90mGET /helptable [36m304 [90m4ms[0m
+[90mGET /helpTable [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helpTable [36m304 [90m5ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m6ms[0m
+[90mGET /helpTable [36m304 [90m8ms[0m
+[90mGET /helpTable [36m304 [90m8ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m6ms[0m
+[90mGET /helpTable [36m304 [90m7ms[0m
+[90mGET /helptable [36m304 [90m5ms[0m
+[90mGET /helptable [36m304 [90m6ms[0m
+[90mGET /helptable [36m304 [90m7ms[0m
+[90mGET /helptable [36m304 [90m8ms[0m
+[90mGET /helptable [36m304 [90m6ms[0m
+[90mGET /helptable [36m304 [90m6ms[0m
+[90mGET /helptable [36m304 [90m6ms[0m
+[90mGET /helptable [36m304 [90m7ms[0m
+[90mGET /helptable [36m304 [90m5ms[0m
+[90mGET /helptable [36m304 [90m12ms[0m
+[90mGET /helptable [36m304 [90m4ms[0m
+[90mGET /helptable [36m304 [90m4ms[0m
+[90mGET /helptable [36m304 [90m4ms[0m
+[90mGET /helptable [36m304 [90m4ms[0m
+[90mGET /helptable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m5ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable [36m304 [90m5ms[0m
+[90mGET /helpTable [36m304 [90m4ms[0m
+[90mGET /helpTable/ [32m200 [90m6ms - 1.25kb[0m
+[90mGET /helpTable/ [32m200 [90m6ms - 1.25kb[0m
+[90mGET /helpTable/ [32m200 [90m4ms - 1.25kb[0m
+[90mGET /helpTable [32m200 [90m4ms - 1.25kb[0m
+[90mGET /helpTable [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helpTable/ [32m200 [90m4ms - 1.25kb[0m
+[90mGET /helpTable [32m200 [90m4ms - 1.25kb[0m
+[90mGET /helptable [32m200 [90m4ms - 1.25kb[0m
+[90mGET /helptable [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helptable [32m200 [90m8ms - 1.25kb[0m
+[90mGET /helptable [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helptable/ [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helptable/ [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helptable [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helptable?page=structure [32m200 [90m3ms - 912[0m
+[90mGET /helptable?page=import [32m200 [90m4ms - 1.27kb[0m
+[90mGET /helptable?page=export [32m200 [90m5ms - 950[0m
+[90mGET /helptable?page=browse [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helptable?page=browse [32m200 [90m5ms - 1.25kb[0m
+[90mGET /helptable?page=browse [32m200 [90m4ms - 1.25kb[0m
+[90mGET /helptable?page=browse [32m200 [90m6ms - 1.25kb[0m

@@ -1,0 +1,23 @@
+extends layout
+block content
+	script(type='text/javascript', src='javascripts/jquery-1.9.1.min.js')
+	script(type='text/javascript', src='javascripts/structure_EventHandler.js')
+	div#menu
+		a(href='?tbl=#{arrParams.tbl}&page=browse') Browse
+		span   |	
+		span Structure
+		span   |	
+		a(href='?tbl=#{arrParams.tbl}&page=import') Import
+		span   |	
+		a(href='?tbl=#{arrParams.tbl}&page=export') Export
+	div#container		
+		table#data
+			tr
+				td
+					img(src='images/ajax-loader.gif', style='border:0px')
+					
+					
+		
+	
+	
+	

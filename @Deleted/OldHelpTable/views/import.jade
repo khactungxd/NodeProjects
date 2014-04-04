@@ -1,0 +1,28 @@
+extends layout
+block content
+	h1= title
+	script(type='text/javascript', src='/javascripts/jquery-1.9.1.min.js')
+	script(type='text/javascript', src='/javascripts/import_EventHandler.js')
+	div#menu
+		a(href='?page=browse') Browse
+		span   |	
+		a(href='?page=structure') Structure
+		span   |	
+		span Import
+		span   |	
+		a(href='?page=export') Export
+	div#container
+		div
+			h2 1. POST method (JSON)
+				form(method="post")
+					textarea(name='content', style='width:800px; height:300px;') [{"name":"X1", "age":1, "city":"Hanoi"},{"name":"X2", "age":2, "city":"Hanoi"},{"name":"X3", "age":3, "city":"Hanoi"}]
+					br
+					center
+						input(type="submit",name="action",value="POST")
+			h2 2. CSV File
+				form(method="post",enctype="multipart/form-data")
+					input(type="file",name="filecsv")
+					input(type="submit",name="action", value="Upload")    
+	
+	
+	

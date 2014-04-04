@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  div.container
+    div.row
+      div.span12
+        form(method='post', action='/')
+          legend Upload
+          input(type='file', name='myFile', id='myFile')
+          p
+          div.form-actions
+            input.btn.btn-primary(type='submit', value='Submit')
+    hr
+    div.row
+      div.span12
+        div.progress.progress-striped.active.hide
+          div.bar(style='width: 0%')
+    div.row
+      div.span12
+        div.alert.hide
+          button.close(type='button', data-dismiss='alert') x
+          span
+            strong.message
+  div.item-drive
+    ul
+      each item in items
+        if(item.mimeType.split(".").pop() != "folder" && item.mimeType.split(".").pop() != "form")
+          li
+            if(item.webContentLink)
+              a(href="#{item.webContentLink}") #{item.title}
+            else if(item.exportLinks)
+              a(href="#{item['exportLinks']['application/pdf']}") #{item.title}
+            else
+              label #{item.title}

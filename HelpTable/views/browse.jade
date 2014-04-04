@@ -1,0 +1,27 @@
+extends layout
+block content	
+	script(type='text/javascript', src='javascripts/browse_EventHandler.js')
+	div#cloud-grey
+	div#cloud-white
+	div#menu
+		span Browse
+		span   |	
+		a(href='?tbl=#{arrParams.tbl}&page=structure') Structure
+		span   |	
+		a(href='?tbl=#{arrParams.tbl}&page=import') Import
+		span   |	
+		a(href='?tbl=#{arrParams.tbl}&page=export') Export					
+	div#listJS		
+		div#toolbar
+			div#divInsert(style='float:left')
+				button#btInsert Insert New Record	
+			div#divSearch(style='float:right')	
+				input.search(placeholder="Search")
+				//- button#btFilter Filter [Age>18]		
+				//- button#btRemoveFilter Remove Filter
+			div(style='clear:both;')
+		table#data
+			tr#tr-header
+			tbody.list	
+	div#loader(style='text-align:center')		
+	

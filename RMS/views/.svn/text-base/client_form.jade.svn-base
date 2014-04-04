@@ -1,0 +1,11 @@
+h1 Node-Palo Form
+p Front-end request simulation
+  div
+   form(action='/webservice/request/add',method='post')
+    div(data-role='fieldcontain')
+     fieldset(data-role='controlgroup')
+      label(for='message') Message:
+       textarea(id="message",name="message",cols="100",rows="15")
+        { "supermandant":"PE", "mandant":"ramesh18082012", "orgunit": ["organization", "area","hotel","department"], "username":"ramesh_18082012", "location":  { "countryCode": "DE", "postalCode":"70794" } , "entries": [{ "activity": ["act1","act2","act3"], "responsetime": 1101,"statuscode": 200 }]}
+    div(data-role='fieldcontain')   
+     input(type='submit',value='Send',data-transition='fade', data-theme='c')

@@ -1,0 +1,5 @@
+p DB2 - Store procedures :
+select( id="db2Procedures")
+  option(value="default") --- Choose db2 proceduces ---
+  - for(var i=0;i<rows.length;i++)
+      option( value="#{rows[i].SPECIFICNAME}" ) #{rows[i].PROCNAME}

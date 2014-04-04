@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	h1= title
+	table
+		td.name
+			input#id-field(type='hidden')
+			input#name-field(type='text')
+			input#age-field(type='text')
+			input#city-field(type='text')
+	script(type='text/javascript', src='/javascripts/autoCompleteEventHandler.js')

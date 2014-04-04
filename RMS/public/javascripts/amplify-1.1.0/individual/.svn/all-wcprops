@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/individual
+END
+amplify.core.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/individual/amplify.core.min.js
+END
+amplify.request.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/individual/amplify.request.min.js
+END
+amplify.store.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/individual/amplify.store.min.js
+END

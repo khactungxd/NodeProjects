@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data
+END
+jsonp.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/jsonp.php
+END
+data.json
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/data.json
+END
+headers.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/headers.php
+END
+jsend-error.json
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/jsend-error.json
+END
+delay.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/delay.php
+END
+echo.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/echo.php
+END
+jsend-error2.json
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/jsend-error2.json
+END
+jsend-fail.json
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/jsend-fail.json
+END
+echo-raw.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/echo-raw.php
+END
+jsend.json
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/Maas/!svn/ver/3673/components/rms/trunk/public/javascripts/amplify-1.1.0/src/request/test/data/jsend.json
+END

@@ -1,0 +1,42 @@
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+Express server listening on port 3300
+[90mGET / [32m200 [90m108ms - 1020b[0m
+[90mGET /stylesheets/style.css [32m200 [90m18ms - 614b[0m
+[90mGET /javascripts/jquery-1.9.0.min.js [32m200 [90m7436ms - 90.89kb[0m
+[90mPOST /process [32m200 [90m586ms - 3.41kb[0m
+[90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+[90mGET /javascripts/jscolor/jscolor.js [32m200 [90m40ms - 29.11kb[0m
+[90mGET /javascripts/jquery-1.9.0.min.js [36m304 [90m2ms[0m
+[90mGET //html/Thu%20Apr%2003%202014_6_25_47_74_EmailArchiver.html [32m200 [90m2ms - 3.41kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m2ms - 614b[0m
+[90mGET /javascripts/jquery-1.9.0.min.js [32m200 [90m6ms - 90.89kb[0m
+[90mGET //html/javascripts/jscolor/jscolor.js [33m404 [90m2ms[0m
+[90mGET /javascripts/jscolor/hs.png [32m200 [90m2ms - 2.62kb[0m
+[90mGET /javascripts/jscolor/cross.gif [32m200 [90m2ms - 83b[0m
+[90mGET /javascripts/jscolor/arrow.gif [32m200 [90m3ms - 66b[0m
+can't replace html
+Can't display email to html
+[90mPOST /pdf [32m200 [90m4ms[0m
+in for: index: 0
+pic26835.gif
+in for: index: 1
+0016cf91.tif
+[90mPOST /process [32m200 [90m1954ms - 8.55kb[0m
+[90mGET //html/Thu%20Apr%2003%202014_6_37_36_550_EmailArchiver.html [32m200 [90m3ms - 9.07kb[0m
+[90mGET /stylesheets/style.css [32m200 [90m3ms - 614b[0m
+[90mGET /javascripts/jquery-1.9.0.min.js [32m200 [90m3ms - 90.89kb[0m
+[90mGET //html/javascripts/jscolor/jscolor.js [33m404 [90m1ms[0m
+[90mGET /icons/ecblank.gif [33m404 [90m32ms[0m
+[90mGET /icons/graycol.gif [33m404 [90m32ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m255ms[0m
+[90mGET /javascripts/jscolor/jscolor.js [36m304 [90m176ms[0m
+[90mGET /javascripts/jquery-1.9.0.min.js [36m304 [90m53ms[0m
+[90mGET /icons/ecblank.gif [33m404 [90m35ms[0m
+[90mGET /icons/graycol.gif [33m404 [90m15ms[0m
+[90mGET /icons/ecblank.gif [33m404 [90m13ms[0m
+[90mGET /icons/graycol.gif [33m404 [90m46ms[0m
+[90mGET /javascripts/jscolor/hs.png [36m304 [90m123ms[0m
+[90mGET /javascripts/jscolor/arrow.gif [36m304 [90m83ms[0m
+[90mGET /javascripts/jscolor/cross.gif [36m304 [90m44ms[0m

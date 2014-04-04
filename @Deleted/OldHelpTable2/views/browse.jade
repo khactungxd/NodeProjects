@@ -1,0 +1,27 @@
+extends layout
+block content
+	h1= title
+	script(type='text/javascript', src='/javascripts/jquery-1.9.1.min.js')
+	script(type='text/javascript', src='/javascripts/browse_EventHandler.js')
+	div#cloud-grey
+	div#cloud-white
+	div#menu
+		span Browse
+		span   |	
+		a(href='?page=structure') Structure
+		span   |	
+		a(href='?page=import') Import
+		span   |	
+		a(href='?page=export') Export	
+	div#toolbar(style='text-align:center')
+		button#btInsert Insert New Record		
+	div#listJS		
+		div(style='text-align:center')
+			input.search(placeholder="Search")
+			button#btFilter Test Filter [Age>18]
+		div#sort-by(style='text-align:center')
+		table#data
+			tr#tr-header
+			tbody.list	
+	div#loader(style='text-align:center')		
+	

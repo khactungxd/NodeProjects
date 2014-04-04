@@ -1,0 +1,8 @@
+exports.RMS_PORT=3333;
+
+// ==== PALO ====
+exports.DATABASE_ID =9;
+exports.NUMBER_OF_REQUEST_ELEMENT_ID=0;
+exports.RESPONSE_TIME_ELEMENT_ID =1;
+exports.PALO_NUMERIC_TYPE_ID=1;
+exports.PALO_CONSOLIDATE_TYPE_ID=1;

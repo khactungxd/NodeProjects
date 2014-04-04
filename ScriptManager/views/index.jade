@@ -1,0 +1,39 @@
+doctype 5
+html(lang="en")
+  head
+    title= title
+    script(type='text/javascript',src="/javascripts/jquery-1.9.0.min.js")
+    script(type='text/javascript',src="/javascripts/jquery-ui.min.js")
+    script(type='text/javascript',src="/javascripts/jquery.dataTables.min.js")
+    script(type='text/javascript',src="/javascripts/apprise-1.5.full.js")
+    script(type='text/javascript',src="/javascripts/main.js")
+    link(rel='stylesheet', type='text/css', href='/stylesheets/jquery-ui.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/css.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/demo_table.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/apprise.css')
+    script(src="/socket.io/socket.io.js")
+
+  body
+    div(id="center")
+      div(id="action")
+        input(type="button", id="add-service", value="Add New")
+        input(type="button", id="delete-select", index="delete",class="ss-select", value="Delete Select")
+        input(type="button", id="start-select", index="start",class="ss-select", value="Start Select")
+        input(type="button", id="stop-select", index="stop",class="ss-select", value="Stop Select")
+      div
+        pre
+          div(id="dynamic")
+      div(id="dialog-form",style="visibility: hidden")
+        form
+          fieldset
+            label PID :
+            input(type="text", id="prj-pid", class="text ui-widget-content ui-corner-all", value="Non")
+            label Project Name :
+            input(type="text", id="prj-name", class="text ui-widget-content ui-corner-all")
+            label Path To Project :
+            input(type="text",id="path-for-prj", class="text ui-widget-content ui-corner-all")
+            label Project Run On Port:
+            input(type="text",id="prj-port", class="text ui-widget-content ui-corner-all", value="Non")
+      div(id="lognode-dialog",style="visibility: hidden")
+        pre
+          code

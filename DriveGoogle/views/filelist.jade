@@ -1,0 +1,10 @@
+ul
+  each item in items
+    if(item.mimeType.split(".").pop() != "folder" && item.mimeType.split(".").pop() != "form")
+      li
+        if(item.webContentLink)
+          a(href="#{item.webContentLink}") #{item.title}
+        else if(item.exportLinks)
+          a(href="#{item['exportLinks']['application/pdf']}") #{item.title}
+        else
+          label #{item.title}

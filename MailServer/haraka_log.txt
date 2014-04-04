@@ -1,0 +1,64 @@
+loglevel: LOGPROTOCOL
+Starting up Haraka version 2.4.0
+[INFO] [-] [core] Loading plugins
+[INFO] [-] [core] Loading plugin: auth/flat_file
+[INFO] [-] [core] loaded TLD files: 1=442 2=4542 3=283
+[DEBUG] [-] [core] registered hook capabilities to auth/flat_file.hook_capabilities
+[DEBUG] [-] [core] registered hook unrecognized_command to auth/flat_file.hook_unrecognized_command
+[INFO] [-] [core] Loading plugin: rcpt_to.disposable
+[DEBUG] [-] [core] registered hook queue to rcpt_to.disposable.myQueue
+[DEBUG] [-] [core] registered hook rcpt to rcpt_to.disposable.myRcpt
+[INFO] [-] [core] Loading plugin: rcpt_to.in_host_list
+[DEBUG] [-] [core] registered hook rcpt to rcpt_to.in_host_list.hook_rcpt
+[INFO] [-] [core] Loading plugin: my_queue
+[DEBUG] [-] [core] registered hook queue to my_queue.hook_queue
+[NOTICE] [-] [core] Listening on 127.0.0.1:25
+[DEBUG] [-] [core] [server] running init_master hooks
+[INFO] [-] [core] [outbound] Loading outbound queue from /NodeProjects/MailServer/queue
+[NOTICE] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] connect ip=127.0.0.1 port=54409 local_ip=127.0.0.1 local_port=25
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] running lookup_rdns hooks
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] running connect hooks
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] S: 220 palotest ESMTP Haraka 2.4.0 ready
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] C: ehlo palotest state=1
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] running ehlo hooks
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] running capabilities hooks
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] running capabilities hook in auth/flat_file plugin
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] hook=capabilities plugin=auth/flat_file function=hook_capabilities params="" retval=CONT msg=""
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] S: 250-palotest Hello localhost [127.0.0.1], Haraka is at your service.
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] S: 250-PIPELINING
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] S: 250-8BITMIME
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] S: 250-SIZE 500000
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] S: 250 AUTH LOGIN CRAM-MD5
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] C: AUTH CRAM-MD5 state=1
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] running unrecognized_command hooks
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] running unrecognized_command hook in auth/flat_file plugin
+[INFO] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [auth/flat_file] ticket: <69b41.144fd315ef6@palotest>
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] S: 334 PDY5YjQxLjE0NGZkMzE1ZWY2QHBhbG90ZXN0Pg==
+[INFO] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] hook=unrecognized_command plugin=auth/flat_file function=hook_unrecognized_command params="AUTH" retval=OK msg=""
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] C: YWRtaW4gZTVhOTFlNGVlN2FjMGNlYTNlNjM1OTVhM2E2YjkyMjQ= state=1
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] running unrecognized_command hooks
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] running unrecognized_command hook in auth/flat_file plugin
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] S: 235 Authentication successful
+[INFO] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] hook=unrecognized_command plugin=auth/flat_file function=hook_unrecognized_command params="YWRtaW4gZTVhOTFlNGVlN2FjMGNlYTNlNjM1OTVhM2E2YjkyMjQ=" retval=OK msg=""
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0] [core] C: mail FROM:<admin@vn.oxseed.com> state=1
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] running mail hooks
+[NOTICE] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] sender <admin@vn.oxseed.com> code=CONT msg=""
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] S: 250 sender <admin@vn.oxseed.com> OK
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] C: RCPT TO:<manhha1006@gmail.com> state=1
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] running rcpt hooks
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] running rcpt hook in rcpt_to.disposable plugin
+[INFO] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] hook=rcpt plugin=rcpt_to.disposable function=myRcpt params="<manhha1006@gmail.com>" retval=DENY msg="User manhha1006 can not found"
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] running deny hooks
+[NOTICE] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] recipient <manhha1006@gmail.com> code=DENY msg="User manhha1006 can not found" sender="admin@vn.oxseed.com"
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] S: 550 User manhha1006 can not found
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] C: rset state=1
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] running rset hooks
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] S: 250 OK
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] running reset_transaction hooks
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] C: quit state=1
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] running quit hooks
+[PROTOCOL] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] S: 221 palotest closing connection. Have a jolly good day.
+[DEBUG] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] running disconnect hooks
+[NOTICE] [61AFD546-1114-4B0B-BBB6-7F4D67FD0FE0.1] [core] disconnect ip=127.0.0.1 rdns="localhost" helo="palotest" relay=Y early=N esmtp=Y tls=N pipe=N txns=1 rcpts=0/0/1 msgs=0/0/0 bytes=0 lr="550 User manhha1006 can not found" time=1.053
+[NOTICE] [-] [core] SIGTERM received
+[NOTICE] [-] [core] Shutting down

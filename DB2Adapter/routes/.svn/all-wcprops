@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/Maas/!svn/ver/3680/components/DB2Adaptor/trunk/routes
+END
+index.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Maas/!svn/ver/3680/components/DB2Adaptor/trunk/routes/index.js
+END
+procedures.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Maas/!svn/ver/3680/components/DB2Adaptor/trunk/routes/procedures.js
+END
+manager_connect.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/Maas/!svn/ver/3680/components/DB2Adaptor/trunk/routes/manager_connect.js
+END

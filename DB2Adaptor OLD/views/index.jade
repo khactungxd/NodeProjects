@@ -1,0 +1,27 @@
+doctype 5
+html(lang="en")
+  head
+    title = title
+  script(type='text/javascript',src="/javascripts/jquery-1.9.0.min.js")
+  script(type='text/javascript',src="/javascripts/jquery-ui.min.js")
+  script(type='text/javascript',src="/javascripts/jquery.dataTables.min.js")
+  script(type='text/javascript',src="/javascripts/apprise-1.5.full.js")
+  script(type='text/javascript',src="/javascripts/main.js")
+  link(rel='stylesheet', type='text/css', href='/stylesheets/jquery-ui.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/css.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/demo_table.css')
+  link(rel='stylesheet', type='text/css', href='/stylesheets/apprise.css')
+  body
+    div(style="width:1000px;margin:auto;")
+      h1 DB2 - Store Procedures
+      p DB2 - Schema :
+      select(id="db2Schema")
+        option(value="default") --- Choose db2 schema ---
+        - for(var i=0;i<rows.length;i++)
+          if(rows[i].SCHEMANAME.trim() == 'ROOT')
+            option( value="#{rows[i].SCHEMANAME}" ) #{rows[i].SCHEMANAME}
+      div(id="select-proc", style="padding:20px 0 20px;")
+      input(id="run_procedures", type="button", value="Run Procedures")
+      div(id="dialog-form")
+      div(style="padding-top:100px;")
+      div(id="dynamic")

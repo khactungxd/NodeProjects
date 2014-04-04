@@ -1,0 +1,8 @@
+form
+  fieldset
+    - for(var i=0;i<rows.length;i++)
+      label #{rows[i].PARMNAME}
+      input(type="text", class="param-proc text ui-widget-content ui-corner-all", ordinal="#{rows[i].ORDINAL-1}")
+    input(type="hidden",class="schema", value="#{rows[0].ROUTINESCHEMA}")
+    input(type="hidden",class="proc-name", value="#{rows[0].ROUTINENAME}")
+    input(type="hidden",class="specific-name", value="#{rows[0].SPECIFICNAME}")

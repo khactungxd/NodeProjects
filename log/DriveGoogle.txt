@@ -1,0 +1,28 @@
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+Express server listening on port 3400
+[90mGET / [36m302 [90m10ms - 606b[0m
+[90mGET /oauth2callback?code=4/bIGl20isbXASZg6_rrmTubcSPzB9.UkgLwwRP_bkRXE-sT2ZLcbSjOIoXiQI [36m302 [90m2ms - 58b[0m
+[90mGET / [32m200 [90m11419ms - 5.83kb[0m
+[90mGET /stylesheets/bootstrap.min.css [36m304 [90m5ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m5ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/bootstrap.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/script.js [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery.min.map [33m404 [90m1ms[0m
+[90mGET /oauth2callback?code=4/Ytg5dwgbw5Fs5jhthi5G6i6Smbeq.8vjV6tPN5RIeXE-sT2ZLcbSrhgQYiQI [36m302 [90m2ms - 58b[0m
+[90mGET / [32m200 [90m4949ms - 14.8kb[0m
+[90mGET /stylesheets/bootstrap.min.css [36m304 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/bootstrap.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/script.js [36m304 [90m1ms[0m
+[90mGET /oauth2callback?code=4/bTTPR_GidN-Pklfo1QXaexQS5Z3k.cradwqZXmY4aXE-sT2ZLcbRXiQUYiQI [36m302 [90m0ms - 58b[0m
+[90mGET / [32m200 [90m6497ms - 14.8kb[0m
+[90mGET /oauth2callback?code=4/iLF1asRm65C30FHdIsosOsUH7T8y.MuxJ_NFy41cZXE-sT2ZLcbRnDwYYiQI [36m302 [90m2ms - 58b[0m
+[90mGET / [32m200 [90m4388ms - 14.8kb[0m
+[90mGET /stylesheets/bootstrap.min.css [36m304 [90m1ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.9.1.min.js [36m304 [90m2ms[0m
+[90mGET /favicon.ico [32m200 [90m4ms - 1.37kb[0m

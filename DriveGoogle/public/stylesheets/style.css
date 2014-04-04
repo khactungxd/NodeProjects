@@ -1,0 +1,13 @@
+div.item-drive{
+    width: 940px;
+    margin: auto;
+}
+div.item-drive ul li {
+    border: 1px solid;
+    line-height: 20px;
+    width: 400px;
+    float: left;
+    height: 30px;
+    padding: 5px 10px 15px 20px;
+    border-radius: 15px;
+}

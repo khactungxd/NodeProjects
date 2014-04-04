@@ -1,0 +1,236 @@
+Afghanistan	33.0	65.0	Afghanistan News
+Albania	41.0	20.0	Albania News
+Algeria	28.0	3.0	Algeria News
+American Samoa	-14.3333	-170.0	American Samoa News
+Andorra	42.5	1.5	Andorra News
+Angola	-12.5	18.5	Angola News
+Anguilla	18.25	-63.1667	Anguilla News
+Antarctica	-90.0	0.0	Antarctica News
+Antigua and Barbuda	17.05	-61.8	Antigua and Barbuda News
+Argentina	-34.0	-64.0	Argentina News
+Armenia	40.0	45.0	Armenia News
+Aruba	12.5	-69.9667	Aruba News
+Australia	-27.0	133.0	Australia News
+Austria	47.3333	13.3333	Austria News
+Azerbaijan	40.5	47.5	Azerbaijan News
+Bahamas	24.25	-76.0	Bahamas News
+Bahrain	26.0	50.55	Bahrain News
+Bangladesh	24.0	90.0	Bangladesh News
+Barbados	13.1667	-59.5333	Barbados News
+Belarus	53.0	28.0	Belarus News
+Belgium	50.8333	4.0	Belgium News
+Belize	17.25	-88.75	Belize News
+Benin	9.5	2.25	Benin News
+Bermuda	32.3333	-64.75	Bermuda News
+Bhutan	27.5	90.5	Bhutan News
+Bolivia	-17.0	-65.0	Bolivia News
+Bosnia and Herzegovina	44.0	18.0	Bosnia and Herzegovina News
+Botswana	-22.0	24.0	Botswana News
+Bouvet Island	-54.4333	3.4	Bouvet Island News
+Brazil	-10.0	-55.0	Brazil News
+British Indian Ocean Territory	-6.0	71.5	British Indian Ocean Territory News
+Brunei	4.5	114.6667	Brunei News
+Bulgaria	43.0	25.0	Bulgaria News
+Burkina Faso	13.0	-2.0	Burkina Faso News
+Burundi	-3.5	30.0	Burundi News
+Cambodia	13.0	105.0	Cambodia News
+Cameroon	6.0	12.0	Cameroon News
+Canada	60.0	-95.0	Canada News
+Cape Verde	16.0	-24.0	Cape Verde News
+Cayman Islands	19.5	-80.5	Cayman Islands News
+Central African Republic	7.0	21.0	Central African Republic News
+Chad	15.0	19.0	Chad News
+Chile	-30.0	-71.0	Chile News
+China	35.0	105.0	China News
+Christmas Island	-10.5	105.6667	Christmas Island News
+Cocos (Keeling) Islands	-12.5	96.8333	Cocos (Keeling) Islands News
+Colombia	4.0	-72.0	Colombia News
+Comoros	-12.1667	44.25	Comoros News
+Congo	-1.0	15.0	Congo News
+Cook Islands	-21.2333	-159.7667	Cook Islands News
+Costa Rica	10.0	-84.0	Costa Rica News
+Cote D'Ivoire (Ivory Coast)	8.0	-5.0	Cote D'Ivoire (Ivory Coast) News
+Croatia (Hrvatska)	45.1667	15.5	Croatia (Hrvatska) News
+Cuba	21.5	-80.0	Cuba News
+Cyprus	35.0	33.0	Cyprus News
+Czech Republic	49.75	15.5	Czech Republic News
+Denmark	56.0	10.0	Denmark News
+Djibouti	11.5	43.0	Djibouti News
+Dominica	15.4167	-61.3333	Dominica News
+Dominican Republic	19.0	-70.6667	Dominican Republic News
+East Timor	null	null	East Timor News
+Ecuador	-2.0	-77.5	Ecuador News
+Egypt	27.0	30.0	Egypt News
+El Salvador	13.8333	-88.9167	El Salvador News
+Equatorial Guinea	2.0	10.0	Equatorial Guinea News
+Eritrea	15.0	39.0	Eritrea News
+Estonia	59.0	26.0	Estonia News
+Ethiopia	8.0	38.0	Ethiopia News
+Falkland Islands	-51.75	-59.0	Falkland Islands News
+Faroe Islands	62.0	-7.0	Faroe Islands News
+Fiji	-18.0	175.0	Fiji News
+Finland	64.0	26.0	Finland News
+France	46.0	2.0	France News
+French Guiana	4.0	-53.0	French Guiana News
+French Polynesia	-15.0	-140.0	French Polynesia News
+French Southern Territories	-43.0	67.0	French Southern Territories News
+Gabon	-1.0	11.75	Gabon News
+Gambia	13.4667	-16.5667	Gambia News
+Georgia	42.0	43.5	Georgia News
+Germany	51.0	9.0	Germany News
+Ghana	8.0	-2.0	Ghana News
+Greece	39.0	22.0	Greece News
+Greenland	72.0	-40.0	Greenland News
+Grenada	12.1167	-61.6667	Grenada News
+Guadeloupe	16.25	-61.5833	Guadeloupe News
+Guam	13.4667	144.7833	Guam News
+Guatemala	15.5	-90.25	Guatemala News
+Guinea	11.0	-10.0	Guinea News
+Guinea-Bissau	12.0	-15.0	Guinea-Bissau News
+Guyana	5.0	-59.0	Guyana News
+Haiti	19.0	-72.4167	Haiti News
+Heard and McDonald Islands	-53.1	72.5167	Heard and McDonald Islands News
+Honduras	15.0	-86.5	Honduras News
+Hong Kong	22.25	114.1667	Hong Kong News
+Hungary	47.0	20.0	Hungary News
+Iceland	65.0	-18.0	Iceland News
+India	20.0	77.0	India News
+Indonesia	-5.0	120.0	Indonesia News
+Iran	32.0	53.0	Iran News
+Iraq	33.0	44.0	Iraq News
+Ireland	53.0	-8.0	Ireland News
+Israel	31.5	34.75	Israel News
+Italy	42.8333	12.8333	Italy News
+Jamaica	18.25	-77.5	Jamaica News
+Japan	36.0	138.0	Japan News
+Jordan	31.0	36.0	Jordan News
+Kazakhstan	48.0	68.0	Kazakhstan News
+Kenya	1.0	38.0	Kenya News
+Kiribati	1.4167	173.0	Kiribati News
+Korea (North)	40.0	127.0	Korea (North) News
+Korea (South)	37.0	127.5	Korea (South) News
+Kuwait	29.3375	47.6581	Kuwait News
+Kyrgyzstan	41.0	75.0	Kyrgyzstan News
+Laos	18.0	105.0	Laos News
+Latvia	57.0	25.0	Latvia News
+Lebanon	33.8333	35.8333	Lebanon News
+Lesotho	-29.5	28.5	Lesotho News
+Liberia	6.5	-9.5	Liberia News
+Liechtenstein	47.1667	9.5333	Liechtenstein News
+Lithuania	56.0	24.0	Lithuania News
+Luxembourg	49.75	6.1667	Luxembourg News
+Macau	22.1667	113.55	Macau News
+Macedonia	41.8333	22.0	Macedonia News
+Madagascar	-20.0	47.0	Madagascar News
+Malawi	-13.5	34.0	Malawi News
+Malaysia	2.5	112.5	Malaysia News
+Maldives	3.25	73.0	Maldives News
+Mali	17.0	-4.0	Mali News
+Malta	35.8333	14.5833	Malta News
+Marshal Islands	9.0	168.0	Marshal Islands News
+Martinique	14.6667	-61.0	Martinique News
+Mauritania	20.0	-12.0	Mauritania News
+Mauritius	-20.2833	57.55	Mauritius News
+Mayotte	-12.8333	45.1667	Mayotte News
+Mexico	23.0	-102.0	Mexico News
+Micronesia	6.9167	158.25	Micronesia News
+Moldova	47.0	29.0	Moldova News
+Monaco	43.7333	7.4	Monaco News
+Mongolia	46.0	105.0	Mongolia News
+Montserrat	16.75	-62.2	Montserrat News
+Morocco	32.0	-5.0	Morocco News
+Mozambique	-18.25	35.0	Mozambique News
+Myanmar	22.0	98.0	Myanmar News
+Namibia	-22.0	17.0	Namibia News
+Nauru	-0.5333	166.9167	Nauru News
+Nepal	28.0	84.0	Nepal News
+Netherland Antilles	12.25	-68.75	Netherland Antilles News
+Netherlands	52.5	5.75	Netherlands News
+New Caledonia	-21.5	165.5	New Caledonia News
+New Zealand	-41.0	174.0	New Zealand News
+Nicaragua	13.0	-85.0	Nicaragua News
+Niger	16.0	8.0	Niger News
+Nigeria	10.0	8.0	Nigeria News
+Niue	-19.0333	-169.8667	Niue News
+Norfolk Island	-29.0333	167.95	Norfolk Island News
+Northern Marianas Islands	15.2	145.75	Northern Marianas Islands News
+Norway	62.0	10.0	Norway News
+Oman	21.0	57.0	Oman News
+other	null	null	other News
+Pakistan	30.0	70.0	Pakistan News
+Palau	7.5	134.5	Palau News
+Panama	9.0	-80.0	Panama News
+Papua New Guinea	-6.0	147.0	Papua New Guinea News
+Paraguay	-23.0	-58.0	Paraguay News
+Peru	-10.0	-76.0	Peru News
+Philippines	13.0	122.0	Philippines News
+Pitcairn	0.0	null	Pitcairn News
+Poland	52.0	20.0	Poland News
+Portugal	39.5	-8.0	Portugal News
+Puerto Rico	18.25	-66.5	Puerto Rico News
+Qatar	25.5	51.25	Qatar News
+Reunion	-21.1	55.6	Reunion News
+Romania	46.0	25.0	Romania News
+Russian Federation	60.0	100.0	Russian Federation News
+Rwanda	-2.0	30.0	Rwanda News
+Saint Helena	-15.9333	-5.7	Saint Helena News
+Saint Kitts and Nevis	17.3333	-62.75	Saint Kitts and Nevis News
+Saint Lucia	13.8833	-61.1333	Saint Lucia News
+Saint Pierre and Miquelon	46.8333	-56.3333	Saint Pierre and Miquelon News
+Saint Vincent and the Grenadines	13.25	-61.2	Saint Vincent and the Grenadines News
+Samoa	-13.5833	-172.3333	Samoa News
+San Marino	43.7667	12.4167	San Marino News
+Sao Tome and Principe	1.0	7.0	Sao Tome and Principe News
+Saudi Arabia	25.0	45.0	Saudi Arabia News
+Senegal	14.0	-14.0	Senegal News
+Seychelles	-4.5833	55.6667	Seychelles News
+Sierra Leone	8.5	-11.5	Sierra Leone News
+Singapore	1.3667	103.8	Singapore News
+Slovak Republic	48.6667	19.5	Slovak Republic News
+Slovenia	46.0	15.0	Slovenia News
+Solomon Islands	-8.0	159.0	Solomon Islands News
+Somalia	10.0	49.0	Somalia News
+South Africa	-29.0	24.0	South Africa News
+South Georgia and the South Sandwich Islands	-54.5	-37.0	South Georgia and the South Sandwich Islands News
+Spain	40.0	-4.0	Spain News
+Sri Lanka	7.0	81.0	Sri Lanka News
+Sudan	15.0	30.0	Sudan News
+Suriname	4.0	-56.0	Suriname News
+Svalbard and Jan Mayen Islands	78.0	20.0	Svalbard and Jan Mayen Islands News
+Swaziland	-26.5	31.5	Swaziland News
+Sweden	62.0	15.0	Sweden News
+Switzerland	47.0	8.0	Switzerland News
+Syria	35.0	38.0	Syria News
+Taiwan	23.5	121.0	Taiwan News
+Tajikistan	39.0	71.0	Tajikistan News
+Tanzania	-6.0	35.0	Tanzania News
+Thailand	15.0	100.0	Thailand News
+Togo	8.0	1.1667	Togo News
+Tokelau	-9.0	-172.0	Tokelau News
+Tonga	-20.0	-175.0	Tonga News
+Trinidad and Tobago	11.0	-61.0	Trinidad and Tobago News
+Tunisia	34.0	9.0	Tunisia News
+Turkey	39.0	35.0	Turkey News
+Turkmenistan	40.0	60.0	Turkmenistan News
+Turks and Caicos Islands	21.75	-71.5833	Turks and Caicos Islands News
+Tuvalu	-8.0	178.0	Tuvalu News
+Uganda	1.0	32.0	Uganda News
+Ukraine	49.0	32.0	Ukraine News
+United Arab Emirates	24.0	54.0	United Arab Emirates News
+United Kingdom	54.0	-2.0	United Kingdom News
+United States of America	38.0	-97.0	United States of America News
+Uruguay	-33.0	-56.0	Uruguay News
+Uzbekistan	41.0	64.0	Uzbekistan News
+Vanuatu	-16.0	167.0	Vanuatu News
+Vatican City	41.9	12.45	Vatican City News
+Venezuela	8.0	-66.0	Venezuela News
+Vietnam	16.0	106.0	Vietnam News
+Virgin Islands (British)	18.3333	-64.8333	Virgin Islands (British) News
+Virgin Islands (US)	null	null	Virgin Islands (US) News
+Wallis and Futuna Islands	-13.3	-176.2	Wallis and Futuna Islands News
+Western Sahara	24.5	-13.0	Western Sahara News
+Yemen	15.0	48.0	Yemen News
+Yugoslavia	null	null	Yugoslavia News
+Zaire	-20.0	30.0	Zaire News
+Zambia	-15.0	30.0	Zambia News
+Zimbabwe	null	null	Zimbabwe News

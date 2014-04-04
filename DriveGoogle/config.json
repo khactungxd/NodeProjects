@@ -1,0 +1,15 @@
+
+{
+  "LOCAL" : {
+    "clientID" :"296660839243-ekiiv11g95kb8lnlo3i7o9f4odptc4ir.apps.googleusercontent.com",
+    "clientSecret":"0i3832M6WPJItBuum1EQRIHt",
+    "redirectURL":"http://localhost:3400/oauth2callback",
+    "scope" : "https://www.googleapis.com/auth/drive"
+  },
+  "SERVER" : {
+    "clientID" :"296660839243-f685bg8r329ia14t8qevldht22472gku.apps.googleusercontent.com",
+    "clientSecret":"bppsZ2d8E7FkECFy5bOeMqMO",
+    "redirectURL":"http://vn.oxseed.com/others/gd/index.php",
+    "scope" : "https://www.googleapis.com/auth/drive"
+  }
+}

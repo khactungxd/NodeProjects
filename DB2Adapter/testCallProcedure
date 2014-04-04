@@ -1,0 +1,37 @@
+var odbc = require('odbc');
+var os = require('os');
+var db = new odbc.Database();
+
+var connectionString = "";
+//if(os.platform=='linux')
+  connectionString = "DRIVER={DB2};DATABASE=SAMPLE;UID=root;PWD=oxseed09;HOSTNAME=192.168.16.210;port=3700;";
+//else
+//  connectionString = "DRIVER={IBM DB2 ODBC DRIVER};DATABASE=SAMPLE;UID=root;PWD=oxseed09;HOSTNAME=192.168.1.210;port=3700;";
+
+db.open(connectionString, function (err) {
+  if (err) {
+    console.error("error: ", err.message);
+    db.close(function () {
+      console.log("Connection Closed");
+    });
+  } else {
+//    db.query("select * from syscat.ROUTINEPARMS where SPECIFICNAME='SQL131212042758927'", function (err, rows, params) {
+    db.query("call ROOT.SP_PROC1(?,?)", ['CA',0],function (err, rows) {
+      console.log(err);
+      console.log(rows);
+      db.close(function () {
+        console.log("Connection Closed");
+      });
+    })
+  }
+});
+
+// ---- Store Procedure SP_PROC1
+//CREATE PROCEDURE sp_proc1 (IN VARNAME VARCHAR(128), OUT VARCOUNT INTEGER)
+//P1: BEGIN
+//-- #######################################################################
+//-- # Returns count of tables created by ROOT and like VARNAME
+//-- #######################################################################
+//SELECT COUNT(*) INTO VARCOUNT FROM SYSIBM.SYSTABLES
+//WHERE CREATOR = 'ROOT' AND NAME LIKE CAST('%'||VARNAME||'%' as VARCHAR(128));
+//END P1

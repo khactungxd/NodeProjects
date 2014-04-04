@@ -1,0 +1,23 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='stylesheets/jquery-ui.css')
+		link(rel='stylesheet', href='stylesheets/style.css')
+		script(type='text/javascript', src='javascripts/jquery-1.9.1.min.js')
+		script(type='text/javascript', src='javascripts/jquery-ui.js')
+		script(type='text/javascript', src='javascripts/list.min.js')
+		script(type='text/javascript', src='javascripts/main_EventHandler.js')
+		script
+			tbl="#{arrParams.tbl}";
+			currentPage="#{arrParams.page}";
+	body
+		h1#mainTitle #{title}
+		table#wrapper
+			tr
+				td#cLeft(valign='top')
+					div#divManageTables						
+					div#tableList						
+				td#cRight(valign='top')
+					div#divTitle
+					block content		

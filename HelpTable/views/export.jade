@@ -1,0 +1,18 @@
+extends layout
+block content
+	script(type='text/javascript', src='/javascripts/jquery-1.9.1.min.js')
+	script(type='text/javascript', src='/javascripts/export_EventHandler.js')
+	div#menu
+		a(href='?tbl=#{arrParams.tbl}&page=browse') Browse
+		span   |	
+		a(href='?tbl=#{arrParams.tbl}&page=structure') Structure
+		span   |	
+		a(href='?tbl=#{arrParams.tbl}&page=import') Import
+		span   |	
+		span Export		
+	div#container
+		div
+			h2 
+				a(href='ajax?tableName=#{arrParams.tbl}&action=getAllRecords', target='_blank') 1. JSON
+			h2 
+				a(href='downloadCSV?tableName=#{arrParams.tbl}') 2. CSV File				

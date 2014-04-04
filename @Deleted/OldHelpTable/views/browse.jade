@@ -1,0 +1,21 @@
+extends layout
+block content
+	h1= title
+	script(type='text/javascript', src='/javascripts/jquery-1.9.1.min.js')
+	script(type='text/javascript', src='/javascripts/browse_EventHandler.js')
+	div#menu
+		span Browse
+		span   |	
+		a(href='?page=structure') Structure
+		span   |	
+		a(href='?page=import') Import
+		span   |	
+		a(href='?page=export') Export
+	div#container
+		table#data
+			tr
+				td
+					img(src='/images/ajax-loader.gif', style='border:0px')	
+	
+	
+	

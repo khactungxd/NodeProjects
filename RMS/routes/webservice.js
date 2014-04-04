@@ -1,0 +1,908 @@
+// =========================== DEPENDENCIES ==============================
+var http = require ('http');
+var fs = require('fs');
+var redis = require('redis');
+var crypto = require('crypto');
+var async=require('async');
+
+var palo = require ('../includes/palo');
+var config=require('../config.js');
+var helper = require('../includes/node_helper.js');
+
+
+// =========================== ROUTES HANDLERS ==============================
+exports.main=function(req,res){
+	res.send("RMS Webservice is ready !");
+}
+
+// ***************************************************  REQUESTS *************************************************************
+exports.requests=function(req,res){
+    var redisClient = redis.createClient();
+
+    var result=[];
+    redisClient.keys("PaloRequest*",function(err,data){		// Read all requests from Redis Database
+        var arrKeys=data;
+        async.eachSeries(arrKeys, function(key, callback){
+            redisClient.HMGET(key, "message", "meta", function(err,data){
+                //html+="<tr><td>"+key+"</td><td>"+data[0]+"</td><td>"+data[1]+"</td></tr>"
+                var oMessage=JSON.parse(data[0]);
+                var oMeta=JSON.parse(data[1]);
+                result.push({"key":key, "message": oMessage, "meta": oMeta});
+                callback();
+            });
+        }, function(err){
+          redisClient.quit();
+            res.send(JSON.stringify(result));
+        });
+    });
+}
+
+// ***************************************************  ADD REQUEST ***********************************************************
+exports.add_request=function(req,res){
+
+    var message=req.body.message;
+    var userAgent=req.headers['user-agent'];
+    var errorText="";
+    try {
+        message=message.replace(/\\/g,'\\\\');
+        var oMessage=JSON.parse(message);
+        if (!oMessage.supermandant || !oMessage.mandant || !oMessage.orgunit || !oMessage.username || !oMessage.entries ) errorText="INVALID REQUEST ! LACK OF REQUEST INFORMATION";
+        for (var i=0; i<oMessage.entries.length; i++ ){
+            var entry=oMessage.entries[i];
+            if (!entry.activity || !entry.responsetime || !entry.statuscode){
+                errorText="INVALID REQUEST ! LACK OF ENTRY INFORMATION";
+            }
+        }
+        //if (!oMessage.location.countryCode || !oMessage.location.postalCode ) errorText="INVALID LOCATION INFORMATION";
+    } catch (e) {
+        errorText="INVALID REQUEST FORMAT: "+e;
+    }
+    if (errorText){
+        res.send(400,errorText);
+        return;
+    }
+    res.send("REQUEST RECEIVED");
+    oMessage.userAgent=userAgent;
+    var now=new Date().getTime();
+    var meta={"userAgent":userAgent, "time":now};
+    meta=JSON.stringify(meta);
+  var redis_client = redis.createClient();
+    var md5 =crypto.createHash('md5').update(JSON.stringify(message)).digest("hex");
+    redis_client.HMSET("PaloRequest "+now+md5, "message",message,  "meta", meta, function(){
+        redis_client.quit();
+    });
+}
+
+// ***************************************************  SUPERMANDANTS *************************************************************
+exports.supermandants=function(req,res){
+	palo.login(function(paloSID){		
+		palo.getCubes(paloSID,config.DATABASE_ID,function(arrCubes){
+			var arr = new Array();
+			for(var i=0;i<arrCubes.length;i++){
+				console.log(arrCubes[i].name);
+				arr[arr.length] = arrCubes[i].name;
+			}
+			res.send(arr);
+		})
+	})
+}
+
+// *****************************************************  MANDANTS  ***************************************************************
+exports.mandants=function(req,res){
+	palo.login(function(paloSID){
+		palo.getDimensions(paloSID,config.DATABASE_ID,function(dimensions){
+			for(var i =0;i<dimensions.length;i++){
+				if(dimensions[i].name == "UserHierarchy"){
+					palo.getElements(paloSID,config.DATABASE_ID,dimensions[i].id,function(elements){
+						var arrMandant = new Array();
+						for(var i=0;i<elements.length;i++){
+							if(elements[i].depth != 1) continue;
+							
+							arrMandant[arrMandant.length] = elements[i].name;
+						}
+						console.log(arrMandant);
+						res.send(JSON.stringify(arrMandant));
+					})
+					break;
+				}
+			}
+		})
+	})
+}
+
+// *****************************************************  LOCATIONS  ***************************************************************
+exports.locations=function(req,res){
+	palo.login(function(paloSID){
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 			
+			var data ="";
+			for(var i=0;i<arrDimensions.length;i++){
+				if(arrDimensions[i].name == "Locations"){
+					var inputArray = arrDimensions[i].elements;
+					var outputArray=recursion_getElementsTree(0,"",inputArray) ;			
+					countStatic(1); // reset count
+					data=outputArray[0];			
+					break;
+				}
+			}
+			console.log(data);
+			res.send(JSON.stringify(data));
+		})
+	})
+}
+
+// *****************************************************  ACTIVITIES  ***************************************************************
+exports.activities=function(req,res){
+	palo.login(function(paloSID){																					 
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 			
+			var data ="";
+			for(var i=0;i<arrDimensions.length;i++){
+				if(arrDimensions[i].name == "Activities"){
+					var inputArray = arrDimensions[i].elements;
+					var outputArray=recursion_getElementsTree(0,"",inputArray) ;			
+					countStatic(1); // reset count
+					data=outputArray[0];			
+					break;
+				}
+			}
+			console.log(data);
+			res.send(JSON.stringify(data));
+		})
+	})
+}
+
+// ****************************************************  RECENT DATA  *************************************************************
+exports.recent_data=function(req,res){
+	var getParamters=function(req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);	
+		params['apiName'] = "get_recent_data";
+		params['supermandant'] = req.query["supermandant"];		
+		if (req.query['mandant']) params['UserHierarchy']= req.query["mandant"];
+		if (req.query['location']) params['Locations']= req.query["location"];
+		return params;
+	}
+
+	var getPath=function(params,arrDimensions){		
+		var arrMeasurementElementList=helper.getMeasurementElementList(arrDimensions); // return array(0,1)
+		var nDimensions=arrDimensions.length;
+		var measurementDimensionPosition = helper.getDimensionPosition(arrDimensions,"Measurement");
+		var fullPath="";
+		for (var i=0;i<arrMeasurementElementList.length;i++){
+			var path="";
+			for (var k=0; k<nDimensions; k++){
+						//params[ arrDimensions[k].name] = params[ arrDimensions[k].name].replace("+"," ");
+						//params[ arrDimensions[k].name] = params[ arrDimensions[k].name].replace("%20","");
+				if (k!= measurementDimensionPosition){
+					path+=helper.getElementId(arrDimensions[k].elements, params[ arrDimensions[k].name] ) ;			
+				}
+				else if (k==measurementDimensionPosition){
+					path+=arrMeasurementElementList[i];
+				}
+				if (k<(nDimensions-1)) path+=",";
+			}
+			fullPath+=path;
+			if (i!=(arrMeasurementElementList.length-1)){
+				fullPath+=":";
+			}
+		}
+		return fullPath;
+	}
+	palo.login(function(paloSID){
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 // all dimensions with elements inside			
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth()+1;
+			var day = date.getDate();
+			
+			var params=getParamters(req, arrDimensions);	
+			params['Years'] = year;//get year
+			var cellPath1=getPath(params, arrDimensions);
+			//console.log(cellPath1);
+			if (month<10) params['Months']="0"+month+".Month";//get month
+			else params['Months']=month+".Month";		
+			var cellPath2=getPath(params, arrDimensions);
+			//console.log(cellPath2);
+			if (day<10) params['Days']="0"+day+".Day";//get day
+			else params['Days']=day+".Day";		
+			var cellPath3=getPath(params, arrDimensions);
+			//console.log(cellPath3);
+			if(!params['supermandant']){
+				var error = {"error":"Please,chose SuperMandant"};
+				res.send(JSON.stringify(error));					
+			}else{
+				 palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){	
+					var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+					if (cubeID!=undefined){
+						palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,cellPath3,function(arrCellValues3){
+							var arr = new Object();
+							arr.today = new Object();
+							arr.today.number_of_requests = arrCellValues3[0];
+							arr.today.response_time = arrCellValues3[1];
+							palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,cellPath2,function(arrCellValues2){
+								arr.this_month = new Object();
+								arr.this_month.number_of_requests = arrCellValues2[0];
+								arr.this_month.response_time = arrCellValues2[1];
+								palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,cellPath1,function(arrCellValues1){
+									arr.this_year = new Object();
+									arr.this_year.number_of_requests = arrCellValues1[0];
+									arr.this_year.response_time = arrCellValues1[1];
+									//res.send(cubeID);
+									res.send(JSON.stringify(arr));
+								})
+							})
+						})
+					} else {								
+						printError(res, "Not have this SuperMandant");
+					}
+				 })
+			} 
+		})
+	})
+}
+
+// ****************************************************  DATA BY LOCATION  *************************************************************
+exports.data_by_location=function(req,res){
+	var getParamters=function (req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);	
+		params['apiName'] = "data_by_location";
+		params['supermandant'] = req.query["supermandant"];		
+		if (req.query['mandant']) params['UserHierarchy']= req.query["mandant"];
+		if (req.query['year']) params['Years']= req.query["year"];
+		if (req.query['month']){
+			var month=parseInt(req.query["month"]);
+			if (month<10) params['Months']="0"+month+".Month";
+			else params['Months']=month+".Month";		
+		}
+		if (req.query['day']){
+			var day=parseInt(req.query["day"]);
+			if (day<10) params['Days']="0"+day+".Day";
+			else params['Days']=day+".Day";		
+		}
+		return params;
+	}
+	palo.login(function(paloSID){																				// login to Palo
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 							// all dimensions with elements inside			
+			var params=getParamters(req, arrDimensions);								 			 			// all input parameters + combine with default values
+			var fullCellPath=helper.getFullPath(params, arrDimensions,"Locations");								// get palo cell path to use in Palo HTTP API							
+			console.log("Full Path = "+fullCellPath);
+			palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){				
+				var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+				//console.log("Cube ID = "+cubeID);
+				if (cubeID!=undefined){
+					palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,fullCellPath,function(arrCellValues){
+						console.log("Arr Cell Values = "+arrCellValues);
+						printJSON(res, params, arrDimensions, arrCellValues, "Locations");						// respond to client
+					})
+				} else {
+					printError(res,"Cube doesn't exist");														// respond to client
+				}
+			})
+		})
+	})
+}
+
+// ****************************************************  DATA BY ACTIVITY  *************************************************************
+exports.data_by_activity=function(req,res){
+	var getParamters=function (req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);	
+		params['apiName'] = "data_by_activity";
+		params['supermandant'] = req.query["supermandant"];		
+		if (req.query["location"]) params['Locations'] = req.query["location"];	
+		console.log(params['location']);
+		if (req.query['mandant']) params['UserHierarchy']= req.query["mandant"];
+		if (req.query['year']) params['Years']= req.query["year"];
+		if (req.query['month']){
+			var month=parseInt(req.query["month"]);
+			if (month<10) params['Months']="0"+month+".Month";
+			else params['Months']=month+".Month";	
+		}
+		if (req.query['day']){
+			var day=parseInt(req.query["day"]);
+			if (day<10) params['Days']="0"+day+".Day";
+			else params['Days']=day+".Day";		
+		}
+		return params;
+	}
+	palo.login(function(paloSID){																					 // login to Palo
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 // all dimensions with elements inside			
+			var params=getParamters(req, arrDimensions);								 			 // all input parameters + combine with default values
+			var fullCellPath=helper.getFullPath(params, arrDimensions,"Activities");									 	 // get palo cell path to use in Palo HTTP API										
+			console.log("Full Path = "+fullCellPath);
+			palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){				
+				var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+				if (cubeID!=undefined){
+					palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,fullCellPath,function(arrCellValues){
+						console.log("Arr Cell Values = "+arrCellValues);
+						printJSON(res, params, arrDimensions, arrCellValues, "Activities");						// respond to client
+					})
+				} else {
+					printError(res,"Cube doesn't exist");														// respond to client
+				}
+			})
+		})
+	})
+}
+
+// ****************************************************  DATA BY ORGUNIT  *************************************************************
+exports.data_by_orgunit=function(req,res){
+	var getParamters=function (req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);			
+		params['supermandant'] = req.query["supermandant"];		
+		params['mandant'] = req.query["mandant"];		
+		
+		if (req.query["location"]) params['Locations'] = req.query["location"];				
+		if (req.query['year']) params['Years']= req.query["year"];
+		if (req.query['month']){
+			var month=parseInt(req.query["month"]);
+			if (month<10) params['Months']="0"+month+".Month";
+			else params['Months']=month+".Month";	
+		}
+		if (req.query['day']){
+			var day=parseInt(req.query["day"]);
+			if (day<10) params['Days']="0"+day+".Day";
+			else params['Days']=day+".Day";		
+		}
+		return params;
+	}	
+	var recursion_getElementsTree=function (depth,parentId,inputArray, arrValues){				
+		console.log("recursionGetElements depth:"+depth+" parentId:"+parentId);
+		console.log(inputArray);
+		var outputArray = new Array();
+		
+		for(var i=0 ; i<inputArray.length ;i++){
+			if(inputArray[i].depth != depth) continue;
+			if(inputArray[i].parent != parentId) continue;
+			var e={}; // elements
+			//insert e.depth
+			e.name=inputArray[i].name;
+			e.depth = inputArray[i].depth;
+			e.number_of_requests = arrValues[countStatic()];
+			e.response_time=arrValues[countStatic()];		
+			e.children=recursion_getElementsTree(depth+1,inputArray[i].id,inputArray, arrValues);
+			outputArray[outputArray.length]=e;		
+		}
+		return outputArray;
+	}
+	palo.login(function(paloSID){																					 // login to Palo
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 // all dimensions with elements inside			
+			var params=getParamters(req, arrDimensions);							 // all input parameters + combine with default values
+			var arrTargetElementIds=[];//helper.getElementsArrayByDFS(arrDimensions,"UserHierarchy");  // return array(0,1,2,4,3);	
+			console.log('arrTargetElementIds:');console.log(arrTargetElementIds);
+			var arrTargetElements=[];
+			for ( var i=0; i<arrDimensions.length;i++){
+				if(arrDimensions[i].name == "UserHierarchy") {
+					arrTargetElements = arrDimensions[i].elements;
+					break;					
+				}
+			}			
+			// FILTER, ONLY GET NECESSARY ELEMENTS OF TARGET DIMENSION
+			var arrFilteredTargetElements=[];
+			for (var i=0; i<arrTargetElements.length; i++){				
+				var e=arrTargetElements[i];				
+				if (e.depth>2) continue;
+				if (params['mandant']){
+					if (e.depth==1){
+						if (e.name!=params['mandant']) continue;
+						else params['mandantId']=e.id;
+					}
+					if (e.depth==2 && e.parent!=params['mandantId']) continue;
+				}
+				arrFilteredTargetElements.push(e);
+				arrTargetElementIds.push(e.id);
+			}
+			arrTargetElements=arrFilteredTargetElements;			
+			console.log("arrTargetElements="); console.log(arrTargetElements); //exit();
+			
+			var arrMeasurementElementList=helper.getMeasurementElementList(arrDimensions); // return array(0,1)
+			var nDimensions=arrDimensions.length;
+			var targetDimensionPosition	= helper.getDimensionPosition(arrDimensions,"UserHierarchy");	
+			var measurementDimensionPosition = helper.getDimensionPosition(arrDimensions,"Measurement");
+			
+			var fullPath="";
+			for (var i=0; i<arrTargetElementIds.length; i++){
+				for (var j=0;j<arrMeasurementElementList.length;j++){
+					var path="";
+					for (var k=0; k<nDimensions; k++){
+						if (k!=targetDimensionPosition && k!= measurementDimensionPosition){					
+							params[ arrDimensions[k].name] = params[ arrDimensions[k].name].replace("+"," ");					
+							path+=helper.getElementId(arrDimensions[k].elements, params[ arrDimensions[k].name] ) ;														
+						} else if (k==targetDimensionPosition){					
+							path+=arrTargetElementIds[i];
+						} else if (k==measurementDimensionPosition){
+							path+=arrMeasurementElementList[j];
+						}
+						if (k<(nDimensions-1)) path+=",";
+					}
+					fullPath+=path;
+					if (i != (arrTargetElementIds.length-1) || j!=(arrMeasurementElementList.length-1)){
+						fullPath+=":";
+					}
+				}
+			}
+			palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){
+				var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+				if (cubeID!=undefined){
+					palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,fullPath,function(arrCellValues){
+						console.log("Arr Cell Values = "+arrCellValues);												
+						var outputArray=recursion_getElementsTree(0,"",arrTargetElements,arrCellValues) ;
+						console.log("HERE ");
+						console.log(outputArray);
+						countStatic(1); // reset count
+						res.send(JSON.stringify(outputArray[0]));							
+					})
+				} else {
+					printError(res,"Cube doesn't exist");														// respond to client
+				}
+			});			
+		})
+	})
+}
+
+// ****************************************************  DATA BY YEAR  *************************************************************
+exports.data_by_year=function(req,res){
+	var getParamters=function (req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);	
+		//params['apiName'] = "data_by_activity";
+		params['supermandant'] = req.query["supermandant"];		
+		if (req.query['mandant']) params['UserHierarchy']= req.query["mandant"];
+		if (req.query['mandant']) params['Mandant']= req.query["mandant"];
+		if (req.query['location']) params['Locations']= req.query["location"];
+		if(req.query['activity']) params['Activities'] = req.query["activity"];
+		return params;
+
+	}
+	palo.login(function(paloSID){																		// login to Palo
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 					// all dimensions with elements inside			
+			var params=getParamters(req, arrDimensions);								 			 // all input parameters + combine with default values
+			var fullCellPath=helper.getFullPath(params, arrDimensions,"Years");									 	 // get palo cell path to use in Palo HTTP API							
+			console.log("Full Path = "+fullCellPath);
+			palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){				
+				var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+				if (cubeID!=undefined){
+					palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,fullCellPath,function(arrCellValues){
+						console.log("Arr Cell Values = "+arrCellValues);
+						printJSON(res, params, arrDimensions, arrCellValues, "Years");						// respond to client
+					})
+				} else {
+					printError(res,"Cube doesn't exist");														// respond to client
+				}
+			})
+		})
+	})
+}
+
+// ****************************************************  DATA BY MONTH  *************************************************************
+exports.data_by_month=function(req,res){
+	var getParamters=function (req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);	
+		//params['apiName'] = "data_by_activity";
+		params['supermandant'] = req.query["supermandant"];		
+		if (req.query['mandant']) params['UserHierarchy']= req.query["mandant"];
+		if (req.query['mandant']) params['Mandant']= req.query["mandant"];
+		if (req.query['year']) params['Years']= req.query["year"];
+		if (req.query['location']) params['Locations']= req.query["location"];
+		if(req.query['activity']) params['Activities'] = req.query["activity"];
+		return params;
+	}
+	palo.login(function(paloSID){																					 // login to Palo
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 // all dimensions with elements inside			
+			var params=getParamters(req, arrDimensions);								 			 // all input parameters + combine with default values
+			var fullCellPath=helper.getFullPath(params, arrDimensions,"Months");									 	 // get palo cell path to use in Palo HTTP API							
+			console.log("Full Path = "+fullCellPath);
+			palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){				
+				var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+				if (cubeID!=undefined){
+					palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,fullCellPath,function(arrCellValues){
+						console.log("Arr Cell Values = "+arrCellValues);
+						printJSON(res, params, arrDimensions, arrCellValues,"Months");						// respond to client
+					})
+				} else {
+					printError(res,"Cube doesn't exist");														// respond to client
+				}
+			})
+		})
+	})
+}
+
+// ****************************************************  DATA BY DAY  *************************************************************
+exports.data_by_day=function(req,res){
+	var getParamters=function (req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);	
+		params['apiName'] = "data_by_day";
+		params['supermandant'] = req.query["supermandant"];		
+		if (req.query['mandant']) params['UserHierarchy']= req.query["mandant"];
+		if (req.query['year']) params['Years']= req.query["year"];
+		if (req.query['month']){
+			var month=parseInt(req.query["month"]);
+			if (month<10) params['Months']="0"+month+".Month";
+			else params['Months']=month+".Month";		
+		}
+		if(req.query['location']) params['Locations'] = req.query["location"];
+		if(req.query['activity']) params['Activities'] = req.query["activity"];
+		return params;
+	}
+	palo.login(function(paloSID){																					 // login to Palo
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 // all dimensions with elements inside			
+			var params=getParamters(req, arrDimensions);								 			 // all input parameters + combine with default values
+			var fullCellPath=helper.getFullPath(params, arrDimensions,"Days");									 	 // get palo cell path to use in Palo HTTP API							
+			console.log("Full Path = "+fullCellPath);
+			palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){				
+				var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+				if (cubeID!=undefined){
+					palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,fullCellPath,function(arrCellValues){
+						console.log("Arr Cell Values = "+arrCellValues);
+						printJSON(res, params, arrDimensions, arrCellValues, "Days");						// respond to client
+					})
+				} else {
+					printError(res,"Cube doesn't exist");														// respond to client
+				}
+			})
+		})
+	})
+}
+
+// ****************************************************  DATA BY HOUR  *************************************************************
+exports.data_by_hour=function(req,res){
+	var getParamters=function (req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);	
+		params['apiName'] = "data_by_hour";
+		params['supermandant'] = req.query["supermandant"];		
+		if (req.query['mandant']) params['UserHierarchy']= req.query["mandant"];
+		if (req.query['year']) params['Years']= req.query["year"];
+		if (req.query['month']){
+			var month=parseInt(req.query["month"]);
+			if (month<10) params['Months']="0"+month+".Month";
+			else params['Months']=month+".Month";		
+		}
+		if (req.query['day']){
+			var day=parseInt(req.query["day"]);
+			if (day<10) params['Days']="0"+day+".Day";
+			else params['Days']=day+".Day";		
+		}
+		if(req.query['location']) params['Locations'] = req.query["location"];
+		if(req.query['activity']) params['Activities'] = req.query["activuty"];
+		return params;
+	}
+	
+	palo.login(function(paloSID){																					 // login to Palo
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 // all dimensions with elements inside			
+			var params=getParamters(req, arrDimensions);								 			 // all input parameters + combine with default values
+			var fullCellPath=helper.getFullPath(params, arrDimensions,"Hours");									 	 // get palo cell path to use in Palo HTTP API							
+			console.log("Full Path = "+fullCellPath);
+			palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){				
+				var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+				if (cubeID!=undefined){
+					palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,fullCellPath,function(arrCellValues){
+						console.log("Arr Cell Values = "+arrCellValues);
+						printJSON(res, params, arrDimensions, arrCellValues, "Hours");						// respond to client
+					})
+				} else {
+					printError(res,"Cube doesn't exist");														// respond to client
+				}
+			})
+		})
+	})
+}
+
+// ****************************************************  DATA FOR MAP  *************************************************************
+exports.data_for_map=function(req,res){
+	var file = 'cache/geonames/coordinates.json';
+	
+	var getParamters=function (req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);	
+		params['apiName'] = "data_by_map";
+		params['supermandant'] = req.query["supermandant"];		
+		if (req.query['mandant']) params['UserHierarchy']= req.query["mandant"];
+		if (req.query['year']) params['Years']= req.query["year"];
+		if (req.query['month']){
+			var month=parseInt(req.query["month"]);
+			if (month<10) params['Months']="0"+month+".Month";
+			else params['Months']=month+".Month";		
+		}
+		if (req.query['day']){
+			var day=parseInt(req.query["day"]);
+			if (day<10) params['Days']="0"+day+".Day";
+			else params['Days']=day+".Day";		
+		}
+		return params;
+	}
+	var printJSON=function (res,params,arrDimensions, arrCellValues){
+		var data = generateJsonDataForMap(arrDimensions, "Locations", arrCellValues);	
+		findCoordinateCountry(data,function(data){
+			findCoordinatePostalCode(data,function(data){
+				res.send(JSON.stringify(data));
+			})
+		});
+	}
+
+	var generateJsonDataForMap=function (arrDimensions, targetDimension, arrCellValues){
+		var data="";	
+		for ( var i=0; i<arrDimensions.length;i++){
+			if(arrDimensions[i].name == targetDimension) {
+				var inputArray = arrDimensions[i].elements;		
+				var outputArray1 = new Array();
+				var outputArray=recursion(0,"",inputArray,arrCellValues,0,outputArray1) ;			
+				countStatic(1); // reset count
+				data=outputArray;			
+				break;
+			}
+		}		
+		return data;
+	}
+
+	var recursion=function (depth,parentId,inputArray, arrValues,parentId2,outputArray){		
+		for(var i=0 ; i<inputArray.length ;i++){
+			if(inputArray[i].depth != depth) continue;
+			if(inputArray[i].parent != parentId) continue;
+			var e={};
+			e.name=inputArray[i].name;
+			e.depth = inputArray[i].depth;
+			if(depth==2){
+				var k ={};
+				k.name= inputArray[i].name;
+				k.depth = inputArray[i].depth;
+				k.number_of_requests = arrValues[countStatic()];
+				k.response_time = arrValues[countStatic()];	
+				k.parentId = 0;
+				parentId2 = inputArray[i].id;
+				outputArray[outputArray.length] = k;
+				console.log("123 " + inputArray[i].id);
+			}else if(depth==5){
+				var k = {};
+				k.name= inputArray[i].name;
+				k.depth = inputArray[i].depth;
+				k.number_of_requests = arrValues[countStatic()];
+				k.response_time = arrValues[countStatic()];	
+				k.parentId = parentId2;
+				outputArray[outputArray.length] = k;
+				console.log("123 " + inputArray[i].id);
+			}else{
+				countStatic();
+				countStatic();
+			}
+			e.children=recursion(depth+1,inputArray[i].id,inputArray, arrValues,parentId2,outputArray);
+		}
+		return outputArray;
+	}	
+	var findCoordinateCountry=function (arr,callback){
+		fs.readFile(file,'utf8',function(err,chunk){
+			chunk = JSON.parse(chunk);
+			if(err){
+				console.log("Error on reading file "+err);
+			}
+			for(var i=0;i<arr.length;i++){
+				if(arr[i].depth !=2) continue;
+				for(var j=0;j<chunk.length;j++){
+					if(helper.paloDecode(arr[i].name)==chunk[j].countryName){
+						arr[i].lat = chunk[j].lat;
+						arr[i].lng = chunk[j].lng;
+						break;
+					}
+				}
+			}
+			callback(arr);
+		})
+	}
+	var findCoordinatePostalCode=function (arr,callback){
+		getPostalCode(0,arr,function(arr){
+			callback(arr);
+		});
+	}
+	var getPostalCode=function (numb,arr,callback){
+		if(arr[numb].depth == 5){
+			var geonamesFile="./cache/geonames/"+arr[numb].name+".json";
+			if (fs.existsSync(geonamesFile)){
+				fs.readFile(geonamesFile, 'utf8', function (err,data) {
+					if(err){
+						console.log(' !!!!!!!!!!!! Error on reading file: '+arr[numb].name+'.json !!!!!!!!!!! '+err);
+						return;
+					}
+					var json=JSON.parse(data);
+					arr[numb].lat = json.postalcodes[0].lat;
+					arr[numb].lng = json.postalcodes[0].lng;
+					if(numb<(arr.length-1)){
+						getPostalCode(numb+1,arr,callback);
+					}else{
+						callback(arr);
+					}
+				})
+			}else{
+				var n = arr[numb].name.split(",");
+				var postalCode = n[1];
+				var countryCode = n[0];
+				http.get("http://api.geonames.org/postalCodeLookupJSON?formatted=true&postalcode="+postalCode+"&country="+countryCode+"&username=thatko&&style=full", function(resp){
+					resp.setEncoding('utf8');	
+					resp.on('data',function(chunk){	
+						console.log(chunk);
+						var json=JSON.parse(chunk);
+						arr[numb].lat =  json.postalcodes[0].lat;
+						arr[numb].lng =  json.postalcodes[0].lng;
+						fs.writeFile("./cache/geonames/"+countryCode+","+postalCode+".json", chunk, function(err) {
+							if(err) {
+								console.log(err);
+							} else {
+								console.log("The file was saved!");
+							}
+							if(numb<(arr.length-1)){
+								getPostalCode(numb+1,arr,callback);
+							}else{
+								callback(arr);
+							}
+						}); 		
+					});
+				});
+			}
+		}else{
+			if(numb<(arr.length-1)){
+					getPostalCode(numb+1,arr,callback);
+			}else{
+				callback(arr);
+			}
+		}
+	}
+	
+	palo.login(function(paloSID){																					 // login to Palo
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 // all dimensions with elements inside			
+			var params=getParamters(req, arrDimensions);								 			 // all input parameters + combine with default values
+			var fullCellPath=helper.getFullPath(params, arrDimensions,"Locations");									 	 // get palo cell path to use in Palo HTTP API							
+			console.log("Full Path = "+fullCellPath);
+			palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){				
+				var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+				//console.log("Cube ID = "+cubeID);
+				if (cubeID!=undefined){
+					palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,fullCellPath,function(arrCellValues){
+						console.log("Arr Cell Values = "+arrCellValues);
+						printJSON(res, params, arrDimensions, arrCellValues);						// respond to client
+					})
+				} else {
+					printError(res,"Cube doesn't exist");														// respond to client
+				}
+			})
+		})
+	})
+}
+
+// *********************************************  DATA FOR ORGUNIT SCREEN  **********************************************************
+/* *** ===> REPLACED BY "DATA_BY_ORGUNIT" ***
+exports.data_for_orgunit_screen=function(req,res){
+	var getParamters=function (req, arrDimensions){
+		var params={};	
+		params=helper.getDictionaryRootElements(arrDimensions);
+		params['supermandant'] = req.query["supermandant"];		
+		
+		if (req.query['year']) params['Years']= req.query["year"];
+		if (req.query['month']){
+			var month=parseInt(req.query["month"]);
+			if (month<10) params['Months']="0"+month+".Month";
+			else params['Months']=month+".Month";		
+		}
+		if (req.query['day']){
+			var day=parseInt(req.query["day"]);
+			if (day<10) params['Days']="0"+day+".Day";
+			else params['Days']=day+".Day";		
+		}
+		return params;
+	}
+	palo.login(function(paloSID){																				// login to Palo
+		palo.getFullDimensions(paloSID,config.DATABASE_ID,function(arrDimensions){ 	 							// all dimensions with elements inside						
+			var params=getParamters(req, arrDimensions);								 			 			// all input parameters + combine with default values
+			var arrTargetElementList=[];
+			
+			// GET FIRST (HIGHEST) LVL ELEMENTS OF ORGUNIT (depth 1 in UserHierarchy dimension, because depth 0 is mandant, not counted here)
+			for (var i=0; i<arrDimensions.length; i++){
+				if (arrDimensions[i].name=="UserHierarchy"){
+					arrElements=arrDimensions[i].elements;	
+					if (req.query['mandant']){
+						var parentId=helper.getElementId(arrElements, req.query['mandant']);
+						for (var j=0; j<arrElements.length; j++){
+							var e=arrElements[j];
+							if (e.parent==parentId) arrTargetElementList.push(e);
+						}
+					} else {
+						for (var j=0; j<arrElements.length; j++){
+							var e=arrElements[j];
+							if (e.depth==2) arrTargetElementList.push(e);
+						}
+					}	
+					break;
+				}
+			}
+			
+			// GET FULL PATH			
+			var arrMeasurementElementList=helper.getMeasurementElementList(arrDimensions); // return array(0,1)
+			var nDimensions=arrDimensions.length;
+			var targetDimensionPosition	= helper.getDimensionPosition(arrDimensions,"UserHierarchy");	
+			var measurementDimensionPosition = helper.getDimensionPosition(arrDimensions,"Measurement");
+			
+			var fullPath="";
+			for (var i=0; i<arrTargetElementList.length; i++){
+				for (var j=0;j<arrMeasurementElementList.length;j++){
+					var path="";
+					for (var k=0; k<nDimensions; k++){
+						if (k!=targetDimensionPosition && k!= measurementDimensionPosition){					
+							params[ arrDimensions[k].name] = params[ arrDimensions[k].name].replace("+"," ");					
+							path+=helper.getElementId(arrDimensions[k].elements, params[ arrDimensions[k].name] ) ;														
+						} else if (k==targetDimensionPosition){					
+							path+=arrTargetElementList[i].id;
+						} else if (k==measurementDimensionPosition){
+							path+=arrMeasurementElementList[j];
+						}
+						if (k<(nDimensions-1)) path+=",";
+					}
+					fullPath+=path;
+					if (i != (arrTargetElementList.length-1) || j!=(arrMeasurementElementList.length-1)){
+						fullPath+=":";
+					}
+				}
+			}
+			
+			// GET CELL VALUE & PRINT OUT
+			palo.getCubes(paloSID,config.DATABASE_ID,function(cubes){				
+				var cubeID=helper.getCubeIdByName(cubes, params['supermandant']);
+				if (cubeID!=undefined){
+					palo.getCellValues(paloSID,config.DATABASE_ID,cubeID,fullPath,function(arrCellValues){
+						//console.log("Arr Cell Values = "+arrCellValues);
+						var arrResult=[];
+						for (var k=0; k< arrTargetElementList.length; k++){
+							var e={};
+							e.name=arrTargetElementList[k].name;
+							e.number_of_requests=arrCellValues[k*2];
+							e.response_time=arrCellValues[k*2+1];
+							arrResult.push(e);
+						}
+						res.send(JSON.stringify(arrResult));
+					})
+				} else {
+					printError(res,"Cube doesn't exist");														// respond to client
+				}
+			})
+		})
+	})
+}
+*/
+
+// =========================== HELPER ==============================
+function recursion_getElementsTree(depth,parentId,inputArray){
+	var outputArray = new Array();	
+	for(var i=0 ; i<inputArray.length ;i++){
+		if(inputArray[i].depth != depth) continue;
+		if(inputArray[i].parent != parentId) continue;
+		var e={};
+		//e.id=inputArray[i].id;		
+		e.name=inputArray[i].name;
+		e.depth = inputArray[i].depth;
+		e.children=recursion_getElementsTree(depth+1,inputArray[i].id,inputArray);
+		outputArray[outputArray.length]=e;		
+	}
+	return outputArray;
+}	
+
+function countStatic(resetFlag) {
+	if (resetFlag==undefined){
+		// Check to see if the counter has been initialized
+		if ( typeof countStatic.counter == 'undefined' ) {
+			// It has not... perform the initilization
+			countStatic.counter = 0;
+		}    
+	   return(countStatic.counter++);
+	} else {
+		countStatic.counter = 0;
+	}
+}
+
+function printError(res,s){
+	var error = {"error":s};
+	res.send(JSON.stringify(error));	
+}
+function printJSON(res,params,arrDimensions, arrCellValues, targetDimension){
+	var data = helper.generateJsonData(arrDimensions, targetDimension, arrCellValues);	
+	res.send(JSON.stringify(data));	
+}

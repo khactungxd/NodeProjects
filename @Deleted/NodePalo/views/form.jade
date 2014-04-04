@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1 Node-Palo Form
+  p Front-end request simulation
+  div
+   form(action='/palo',method='post')
+    div(data-role='fieldcontain')
+     fieldset(data-role='controlgroup')
+      label(for='message') Message:
+       textarea(id="message",name="message",cols="100",rows="15")
+        { 
+		   “supermandant":"PE",
+		   "mandant":"ramesh18082012",
+		   “orgunit”: [“organization”, “area”,”hotel”,”department”],
+		   "username":"ramesh_18082012 ",
+		   "location":  { “countryCode”: “DE”, “postalCode”:”70794” } ,
+		   “entries”: [
+				  { "activity": {“group”:”loginout”, “cmd”:”login” }, 
+					 "responsetime": 1101,
+					 "statuscode": 200 
+				  }                           
+		   ]
+		}
+
+    div(data-role='fieldcontain')   
+     input(type='submit',value='Send',data-transition='fade', data-theme='c')
+
+/*{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"loginout.login","responstime":1101,"statuscode":200}::{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"welcome.showwelcome","responstime":789,"statuscode":200}::{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"loginout.showmenuview","responstime":974,"statuscode":200}::{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"search.showsavedsearchs","responstime":1099,"statuscode":200}::{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"showworkbaskets.showworkbasketmenu","responstime":1863,"statuscode":200}::{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"workbasketapp.showinvoiceprocess","responstime":1908,"statuscode":200}::{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"workbasketapp.showForward","responstime":1048,"statuscode":200}::{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"stdoperations.forwardProcess","responstime":996,"statuscode":200}::{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"workbasketapp.showArchive","responstime":36182,"statuscode":200}::{"mandant":"ramesh18082012","superMandant":"my","location":"CR,PLZ","username":"ramesh_18082012|My Oxseed","activity":"stdoperations.archiveProcess","responstime":1888,"statuscode":200}*/

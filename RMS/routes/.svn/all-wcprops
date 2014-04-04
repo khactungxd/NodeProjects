@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/Maas/!svn/ver/3673/components/rms/trunk/routes
+END
+client.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/Maas/!svn/ver/3673/components/rms/trunk/routes/client.js
+END
+webservice.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Maas/!svn/ver/3673/components/rms/trunk/routes/webservice.js
+END
+browser.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/Maas/!svn/ver/3673/components/rms/trunk/routes/browser.js
+END

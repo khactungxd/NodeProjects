@@ -1,0 +1,119 @@
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+Express server listening on port 3100
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+yep params
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+yep params
+Connection Closed
+{ error: '[node-odbc] SQL_ERROR',
+  message: '[IBM][CLI Driver][DB2/LINUXX8664] SQL1646N  A routine failed because the fenced user ID cannot access required files in the sqllib directory or other instance or database directories.\n',
+  state: 'HY000' }
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+null
+if No params 
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+null
+if No params 
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+yep params
+Connection Closed
+null
+Connection Closed
+null
+null
+if No params 
+Connection Closed
+null
+yep params
+Connection Closed
+null
+Connection Closed
+null
+yep params
+Connection Closed
+null
+Connection Closed
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+yep params
+Connection Closed
+null
+Connection Closed
+null
+Connection Closed
+null
+null
+if No params 
+Connection Closed
+null
+null
+if No params 
+Connection Closed
+null
+yep params
+Connection Closed
+null
+null
+Connection Closed
+
+/NodeProjects/node_modules/odbc/lib/odbc.js:148
+    self.conn.close(function (err) {
+              ^
+TypeError: Cannot call method 'close' of undefined
+    at /NodeProjects/node_modules/odbc/lib/odbc.js:148:15
+    at SimpleQueue.next (/NodeProjects/node_modules/odbc/lib/simple-queue.js:34:5)
+    at SimpleQueue.maybeNext (/NodeProjects/node_modules/odbc/lib/simple-queue.js:22:10)
+    at /NodeProjects/node_modules/odbc/lib/simple-queue.js:37:12
+    at /NodeProjects/node_modules/odbc/lib/odbc.js:153:14

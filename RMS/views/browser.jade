@@ -1,0 +1,128 @@
+doctype 5
+html
+	head
+		meta(charset="utf-8")
+		title= title
+		link(rel='stylesheet', href='./stylesheets/style.css')
+		link(rel='stylesheet', href='./stylesheets/jquery-ui.css')
+
+		script(type='text/javascript',src='./javascripts/jquery-1.9.1.min.js')
+		script(type='text/javascript',src='./javascripts/jquery-ui.js')
+		script(type='text/javascript',src='./javascripts/highcharts/highcharts.js')
+		script(type='text/javascript',src='./javascripts/browser_helper.js')
+		script(type='text/javascript',src='./javascripts/list.min.js')
+		script(type='text/javascript',src='./javascripts/amplify-1.1.0/amplify.min.js')
+		script(type='text/javascript',src='./javascripts/jquery-ui-map/jquery.ui.map.js')
+		script(type='text/javascript',src='https://www.google.com/jsapi')
+		script
+			google.load("visualization", "1", {packages:["corechart"]});
+		script(type='text/javascript',src='https://maps.google.com/maps/api/js?sensor=true')
+		
+		script(type='text/javascript',src='./javascripts/ScreenHandlers/Screen.class.js')
+		script(type='text/javascript',src='./javascripts/ScreenHandlers/mainScreen.js')
+		script(type='text/javascript',src='./javascripts/ScreenHandlers/locationScreen.js')
+		script(type='text/javascript',src='./javascripts/ScreenHandlers/activityScreen.js')
+		script(type='text/javascript',src='./javascripts/ScreenHandlers/mapScreen.js')
+		script(type='text/javascript',src='./javascripts/ScreenHandlers/chartScreen.js')
+		script(type='text/javascript',src='./javascripts/ScreenHandlers/orgunitScreen.js')
+		
+		script(type='text/javascript',src='./javascripts/language.setting.js')
+		script(type='text/javascript',src='./javascripts/main.js')
+	body
+		div#grey	//- DIALOG BACKGROUND
+		div#mainScreen
+			div.header.border
+				div.divScreenTitle
+					h1.screenTitle.shadow RMS
+					div.navigationBarRight
+						button#btSmDetails
+			div.body
+				div.loading
+					img(src='images/ajax-loader.gif')
+					div LOADING ...
+			div.footer
+				button.btRefresh.button
+				button.btSetInterval.button
+				button#btManageMandants.button
+			div#dlgMandants.dialog.center							
+			div#dlgSmDetails.dialog.center
+				button#btLocationView
+				button#btActivityView
+				button#btOrgunitView
+				button#btMapView
+				button#btChartView
+				button#btRemoveSm
+				
+		div#locationScreen.hide
+			div.header.border
+				div.divScreenTitle
+					div.navigationBarLeft
+						button.btBack.button
+					h1.screenTitle.shadow
+					div.navigationBarRight
+						button#btViewActs.button
+			div.body
+			div.footer				
+				button.btRefresh.button
+				button.btSetInterval.button
+				button.btSetDate.button
+
+		div#activityScreen.hide
+			div.header.border
+				div.divScreenTitle
+					div.navigationBarLeft
+						button.btBack.button
+					h1.screenTitle.shadow
+			div.body
+			div.footer
+				button.btRefresh.button
+				button.btSetInterval.button					
+				button.btSetDate.button
+				button.btSetLocation.button
+				
+		div#mapScreen.hide
+			div.header.border
+				div.divScreenTitle
+					div.navigationBarLeft
+						button.btBack.button
+					h1.screenTitle.shadow						
+			div.body
+			div.footer				
+				button.btRefresh.button
+				button.btSetInterval.button					
+				button.btSetDate.button
+				
+		div#chartScreen.hide
+			div.header.border
+				div.divScreenTitle
+					div.navigationBarLeft
+						button.btBack.button
+					h1.screenTitle.shadow					
+			div.body
+			div.footer
+				button.btRefresh.button
+				button.btSetInterval.button					
+				button.btSetDate.button			
+		
+		div#orgunitScreen.hide
+			div.header.border
+				div.divScreenTitle
+					div.navigationBarLeft
+						button.btBack.button
+					h1.screenTitle.shadow						
+			div.body
+			div.footer
+				button.btRefresh.button
+				button.btSetInterval.button					
+				button.btSetDate.button				
+				
+		div.dlgSetLocation.dialog
+		
+		div.dlgSetDate.dialog.center
+		
+		div.dlgSetInterval.dialog.center
+			button.btIntervalValue(mins="0")
+			button.btIntervalValue(mins="1")
+			button.btIntervalValue(mins="5")
+			button.btIntervalValue(mins="10")
+			button.btIntervalValue(mins="30")
